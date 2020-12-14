@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		EACB1245258799BC00B80F59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB1244258799BC00B80F59 /* AppDelegate.swift */; };
 		EACB1247258799BC00B80F59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB1246258799BC00B80F59 /* SceneDelegate.swift */; };
-		EACB1249258799BC00B80F59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB1248258799BC00B80F59 /* ViewController.swift */; };
+		EACB1249258799BC00B80F59 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB1248258799BC00B80F59 /* TodoViewController.swift */; };
 		EACB124C258799BC00B80F59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACB124A258799BC00B80F59 /* Main.storyboard */; };
 		EACB124F258799BC00B80F59 /* EverydayTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EACB124D258799BC00B80F59 /* EverydayTodo.xcdatamodeld */; };
 		EACB1251258799C100B80F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACB1250258799C100B80F59 /* Assets.xcassets */; };
 		EACB1254258799C100B80F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACB1252258799C100B80F59 /* LaunchScreen.storyboard */; };
+		EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EACB1241258799BC00B80F59 /* EverydayTodo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EverydayTodo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EACB1244258799BC00B80F59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EACB1246258799BC00B80F59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EACB1248258799BC00B80F59 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EACB1248258799BC00B80F59 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		EACB124B258799BC00B80F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EACB124E258799BC00B80F59 /* EverydayTodo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverydayTodo.xcdatamodel; sourceTree = "<group>"; };
 		EACB1250258799C100B80F59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EACB1253258799C100B80F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACB1255258799C100B80F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +60,121 @@
 		EACB1243258799BC00B80F59 /* EverydayTodo */ = {
 			isa = PBXGroup;
 			children = (
-				EACB1244258799BC00B80F59 /* AppDelegate.swift */,
-				EACB1246258799BC00B80F59 /* SceneDelegate.swift */,
-				EACB1248258799BC00B80F59 /* ViewController.swift */,
-				EACB124A258799BC00B80F59 /* Main.storyboard */,
-				EACB1250258799C100B80F59 /* Assets.xcassets */,
-				EACB1252258799C100B80F59 /* LaunchScreen.storyboard */,
-				EACB1255258799C100B80F59 /* Info.plist */,
-				EACB124D258799BC00B80F59 /* EverydayTodo.xcdatamodeld */,
+				EACB12662587A09B00B80F59 /* Resources */,
+				EACB125F25879F5E00B80F59 /* Services */,
+				EACB125E25879F4E00B80F59 /* Sources */,
+				EACB125D25879F3D00B80F59 /* Utils */,
+				EACB125C25879F0A00B80F59 /* Supportings */,
 			);
 			path = EverydayTodo;
+			sourceTree = "<group>";
+		};
+		EACB125C25879F0A00B80F59 /* Supportings */ = {
+			isa = PBXGroup;
+			children = (
+				EACB1255258799C100B80F59 /* Info.plist */,
+			);
+			path = Supportings;
+			sourceTree = "<group>";
+		};
+		EACB125D25879F3D00B80F59 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EACB12682587A11300B80F59 /* Extentions */,
+				EACB124D258799BC00B80F59 /* EverydayTodo.xcdatamodeld */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EACB125E25879F4E00B80F59 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EACB12642587A01B00B80F59 /* ViewControllers */,
+				EACB126325879FFD00B80F59 /* Applications */,
+				EACB126225879FED00B80F59 /* Views */,
+				EACB126125879FDF00B80F59 /* ViewModels */,
+				EACB126025879FBE00B80F59 /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EACB125F25879F5E00B80F59 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		EACB126025879FBE00B80F59 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EACB126125879FDF00B80F59 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		EACB126225879FED00B80F59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EACB126C2587A7E400B80F59 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EACB126325879FFD00B80F59 /* Applications */ = {
+			isa = PBXGroup;
+			children = (
+				EACB1244258799BC00B80F59 /* AppDelegate.swift */,
+				EACB1246258799BC00B80F59 /* SceneDelegate.swift */,
+			);
+			path = Applications;
+			sourceTree = "<group>";
+		};
+		EACB12642587A01B00B80F59 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EACB1248258799BC00B80F59 /* TodoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EACB12662587A09B00B80F59 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EACB12672587A0A900B80F59 /* Storyboards */,
+				EACB1250258799C100B80F59 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EACB12672587A0A900B80F59 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EACB1252258799C100B80F59 /* LaunchScreen.storyboard */,
+				EACB124A258799BC00B80F59 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EACB12682587A11300B80F59 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		EACB126C2587A7E400B80F59 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EACB124F258799BC00B80F59 /* EverydayTodo.xcdatamodeld in Sources */,
-				EACB1249258799BC00B80F59 /* ViewController.swift in Sources */,
+				EACB1249258799BC00B80F59 /* TodoViewController.swift in Sources */,
 				EACB1245258799BC00B80F59 /* AppDelegate.swift in Sources */,
+				EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */,
 				EACB1247258799BC00B80F59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +400,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68663464K3;
-				INFOPLIST_FILE = EverydayTodo/Info.plist;
+				INFOPLIST_FILE = EverydayTodo/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,7 +419,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 68663464K3;
-				INFOPLIST_FILE = EverydayTodo/Info.plist;
+				INFOPLIST_FILE = EverydayTodo/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
