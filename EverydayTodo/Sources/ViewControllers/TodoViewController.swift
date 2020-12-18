@@ -22,16 +22,28 @@ extension TodoViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = .red
+        cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
         cell.layer.cornerRadius = 10.0
         return cell
         
+    }
+    //Header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
+            headerView.slider.value = 0.6
+            headerView.profileImage.makeRounded() //profile radius
+            return headerView
+        default:
+            assert(false, "dd")
+        }
     }
 
 }
 extension TodoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    
+        //TODO: 가로모드와 세로모드의 셀 사이징이 다름. 
         let margin: CGFloat = 10
         let itemSpacing: CGFloat = 10
         let width: CGFloat = (collectionView.bounds.width - margin * 2 - itemSpacing)/2
@@ -39,3 +51,4 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
