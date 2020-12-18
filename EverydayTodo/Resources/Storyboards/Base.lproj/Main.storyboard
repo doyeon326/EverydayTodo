@@ -101,9 +101,6 @@
                                             <state key="normal" image="plus" catalog="system">
                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
                                             </state>
-                                            <connections>
-                                                <segue destination="5RU-BW-GoN" kind="presentation" id="sZq-25-E9z"/>
-                                            </connections>
                                         </button>
                                         <slider opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="qek-9R-w5e" customClass="SliderView" customModule="EverydayTodo" customModuleProvider="target">
                                             <rect key="frame" x="40" y="190" width="334" height="31"/>
@@ -128,6 +125,7 @@
                                         <constraint firstItem="79v-vE-UAq" firstAttribute="leading" secondItem="1IG-Uy-BJC" secondAttribute="trailing" constant="15" id="zcS-8M-Dj6"/>
                                     </constraints>
                                     <connections>
+                                        <outlet property="addTaskButton" destination="DHv-mk-hda" id="K11-mA-HhC"/>
                                         <outlet property="profileImage" destination="1IG-Uy-BJC" id="cYv-6z-m2W"/>
                                         <outlet property="slider" destination="qek-9R-w5e" id="abQ-C6-9ZA"/>
                                     </connections>
@@ -151,40 +149,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="83.705357142857139"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="dH0-Xs-7BI">
-            <objects>
-                <viewController id="5RU-BW-GoN" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="QBa-9s-ZHH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="task.." textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="p7c-eN-GBW">
-                                <rect key="frame" x="47" y="74" width="320" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m0G-m1-cjg">
-                                <rect key="frame" x="318" y="150" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="alarm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ry6-gZ-8ee">
-                                <rect key="frame" x="47" y="155" width="43" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="Zg0-An-KXe"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Syi-6X-MrU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="857" y="84"/>
         </scene>
     </scenes>
     <resources>

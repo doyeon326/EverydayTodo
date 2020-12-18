@@ -7,8 +7,9 @@
 
 import UIKit
 
+
 class HeaderCollectionReusableView: UICollectionReusableView {
+    @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var slider: SliderView!
     @IBOutlet weak var profileImage: UIImageView!
-    
 }

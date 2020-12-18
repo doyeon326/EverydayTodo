@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A80ED70A08A0E84DC023BC38 /* Pods_EverydayTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */; };
 		EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */; };
 		EABC54AA258B5B070092DF9B /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A9258B5B070092DF9B /* LineView.swift */; };
 		EABC54AD258B64D90092DF9B /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54AC258B64D90092DF9B /* HeaderCollectionReusableView.swift */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.debug.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		EABC54A9258B5B070092DF9B /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		EABC54AC258B64D90092DF9B /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -34,6 +37,7 @@
 		EACB1253258799C100B80F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACB1255258799C100B80F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollectionViewCell.swift; sourceTree = "<group>"; };
+		F381C864C153B0F7B76F40CB /* Pods-EverydayTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.release.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,12 +45,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A80ED70A08A0E84DC023BC38 /* Pods_EverydayTodo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		053FA96049F454F2B2C8032C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2C526FEE283607BCC33706C2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */,
+				F381C864C153B0F7B76F40CB /* Pods-EverydayTodo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EABC54A1258B4D0C0092DF9B /* DB */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +83,8 @@
 			children = (
 				EACB1243258799BC00B80F59 /* EverydayTodo */,
 				EACB1242258799BC00B80F59 /* Products */,
+				2C526FEE283607BCC33706C2 /* Pods */,
+				053FA96049F454F2B2C8032C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EACB1258258799C100B80F59 /* Build configuration list for PBXNativeTarget "EverydayTodo" */;
 			buildPhases = (
+				39AFE905CD831334802F309D /* [CP] Check Pods Manifest.lock */,
 				EACB123D258799BC00B80F59 /* Sources */,
 				EACB123E258799BC00B80F59 /* Frameworks */,
 				EACB123F258799BC00B80F59 /* Resources */,
+				90E6EE00143ED443CF3D1479 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +285,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39AFE905CD831334802F309D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EverydayTodo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		90E6EE00143ED443CF3D1479 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EACB123D258799BC00B80F59 /* Sources */ = {
@@ -415,6 +484,7 @@
 		};
 		EACB1259258799C100B80F59 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +504,7 @@
 		};
 		EACB125A258799C100B80F59 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F381C864C153B0F7B76F40CB /* Pods-EverydayTodo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
