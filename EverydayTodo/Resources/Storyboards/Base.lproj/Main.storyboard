@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go to Grocery Shopping with Jessica at 3pm 🥦 🥒🍇🥬" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQA-CF-9QY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Go to Grocery Shopping with Jessica at 3pm 🥦" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQA-CF-9QY">
                                                     <rect key="frame" x="13" y="55" width="150" height="117"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -110,9 +110,19 @@
                                             <color key="minimumTrackTintColor" red="0.93893951180000002" green="0.34982395170000002" blue="0.19330754880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="thumbTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </slider>
+                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-h9-TU6" customClass="ProgressView" customModule="EverydayTodo" customModuleProvider="target">
+                                            <rect key="frame" x="42" y="222" width="330" height="10"/>
+                                            <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="330" id="VIR-Ew-HUD"/>
+                                                <constraint firstAttribute="height" constant="10" id="dLa-yQ-hXX"/>
+                                            </constraints>
+                                        </progressView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="IzX-h9-TU6" firstAttribute="centerX" secondItem="WIb-oZ-Mte" secondAttribute="centerX" id="4VD-wD-Xgw"/>
                                         <constraint firstItem="qek-9R-w5e" firstAttribute="centerX" secondItem="WIb-oZ-Mte" secondAttribute="centerX" id="8Tp-co-fck"/>
+                                        <constraint firstItem="IzX-h9-TU6" firstAttribute="top" secondItem="qek-9R-w5e" secondAttribute="bottom" constant="2" id="DMN-SN-ho6"/>
                                         <constraint firstItem="ML2-5V-94K" firstAttribute="centerX" secondItem="qek-9R-w5e" secondAttribute="centerX" id="GxM-Ta-6jr"/>
                                         <constraint firstItem="qek-9R-w5e" firstAttribute="top" secondItem="ML2-5V-94K" secondAttribute="bottom" constant="10" id="PGg-8M-Mf6"/>
                                         <constraint firstItem="1IG-Uy-BJC" firstAttribute="top" secondItem="WIb-oZ-Mte" secondAttribute="top" constant="20" id="SkZ-dJ-K50"/>
@@ -157,6 +167,9 @@
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

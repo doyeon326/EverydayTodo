@@ -17,7 +17,22 @@ class SliderView: UISlider {
         result.origin.x = 0
         result.size.width = bounds.size.width
         result.size.height = 10 //added height for desired effect
-    
+        
         return result
     }
+}
+
+class ProgressView: UIProgressView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        let maskLayerPath = UIBezierPath(roundedRect: bounds, cornerRadius: self.frame.height / 2)
+        let maskLayer = CAShapeLayer()
+        maskLayer.frame = self.bounds
+        maskLayer.path = maskLayerPath.cgPath
+        maskLayer.fillColor = UIColor.yellow.cgColor
+        
+        layer.mask = maskLayer
+    }
+    
 }
