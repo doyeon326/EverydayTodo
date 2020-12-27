@@ -8,6 +8,11 @@
 import UIKit
 
 class TodoCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var month: UILabel!
+    @IBOutlet weak var day: UILabel!
+    @IBOutlet weak var detail: UILabel!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         //재사용되기전

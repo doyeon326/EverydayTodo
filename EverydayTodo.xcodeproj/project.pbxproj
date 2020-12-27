@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A80ED70A08A0E84DC023BC38 /* Pods_EverydayTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */; };
 		EA99FB71258CD24100E0D30D /* BLTNExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */; };
+		EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB77258D0D3500E0D30D /* ModalViewController.swift */; };
 		EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */; };
 		EABC54AA258B5B070092DF9B /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A9258B5B070092DF9B /* LineView.swift */; };
 		EABC54AD258B64D90092DF9B /* HeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54AC258B64D90092DF9B /* HeaderCollectionReusableView.swift */; };
@@ -20,12 +21,15 @@
 		EACB1251258799C100B80F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACB1250258799C100B80F59 /* Assets.xcassets */; };
 		EACB1254258799C100B80F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACB1252258799C100B80F59 /* LaunchScreen.storyboard */; };
 		EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */; };
+		EAE796062598EE5B0099E415 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE796042598EE5B0099E415 /* Todo+CoreDataClass.swift */; };
+		EAE796072598EE5B0099E415 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE796052598EE5B0099E415 /* Todo+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.debug.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLTNExtensions.swift; sourceTree = "<group>"; };
+		EA99FB77258D0D3500E0D30D /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		EABC54A9258B5B070092DF9B /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
 		EABC54AC258B64D90092DF9B /* HeaderCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -39,6 +43,8 @@
 		EACB1253258799C100B80F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACB1255258799C100B80F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EAE796042598EE5B0099E415 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		EAE796052598EE5B0099E415 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		F381C864C153B0F7B76F40CB /* Pods-EverydayTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.release.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,8 @@
 		EACB126025879FBE00B80F59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				EAE796042598EE5B0099E415 /* Todo+CoreDataClass.swift */,
+				EAE796052598EE5B0099E415 /* Todo+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -182,6 +190,7 @@
 			children = (
 				EACB1248258799BC00B80F59 /* TodoViewController.swift */,
 				EABC54AC258B64D90092DF9B /* HeaderCollectionReusableView.swift */,
+				EA99FB77258D0D3500E0D30D /* ModalViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -340,7 +349,10 @@
 				EA99FB71258CD24100E0D30D /* BLTNExtensions.swift in Sources */,
 				EACB1249258799BC00B80F59 /* TodoViewController.swift in Sources */,
 				EACB1245258799BC00B80F59 /* AppDelegate.swift in Sources */,
+				EAE796062598EE5B0099E415 /* Todo+CoreDataClass.swift in Sources */,
+				EAE796072598EE5B0099E415 /* Todo+CoreDataProperties.swift in Sources */,
 				EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */,
+				EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */,
 				EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */,
 				EABC54AA258B5B070092DF9B /* LineView.swift in Sources */,
 				EACB1247258799BC00B80F59 /* SceneDelegate.swift in Sources */,

@@ -34,5 +34,5 @@ class ProgressView: UIProgressView {
         
         layer.mask = maskLayer
     }
-    
 }
+

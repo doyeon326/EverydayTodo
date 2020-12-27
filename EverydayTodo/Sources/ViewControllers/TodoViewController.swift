@@ -6,60 +6,37 @@
 //
 
 import UIKit
-import BLTNBoard
+import CoreData
 
 class TodoViewController: UIViewController {
+    //collectionView!
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    private lazy var boardManager: BLTNItemManager = {
-        let item = BLTNPageItem(title: "Push Notifications")
-        item.image = UIImage(systemName: "plus")
-        item.actionButtonTitle = "Continue"
-        item.descriptionText = "Would you like to say in the loop and get notifications?"
-        item.alternativeButtonTitle = "maybe later"
-        
-        //textfield added
-        
-        
-        item.actionHandler = { _ in
-            self.didTapBoardContinue()
-        }
-        
-        item.alternativeHandler = { _ in
-            self.didTapBoardSkip()
-        }
-        
-       return BLTNItemManager(rootItem: item)
-    }()
-
+    @IBOutlet weak var collectionView: UICollectionView!
     
-    func didTapBoardContinue(){
-        print("did tapped")
-        
-    }
-    func didTapBoardSkip(){
-        print("did tapped")
-    }
+    // Data for the collectionView
+    var items: [Todo]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        fetchTasks()
     }
 }
 
 extension TodoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return items!.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
         
-        cell.backgroundColor = [UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
-        print("called")
-        //셀 재사용 원치 않을떄? 
-        //.randomelement
-        
+        cell.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+            //[UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
         cell.layer.cornerRadius = 10.0
+        let todo = self.items?[indexPath.row]
+        cell.detail.text = todo?.detail
         return cell
         
     }
@@ -79,12 +56,13 @@ extension TodoViewController: UICollectionViewDataSource {
             assert(false, "dd")
         }
     }
-    @objc func didTappedHeaderViewButton(){
-        //Manager
-        boardManager.showBulletin(above: self)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        cell.contentView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        //[TODO]CoreData에다가 뭐가 저장이 되었고 안되었는지 저장해야함!
     }
-
 }
+
 extension TodoViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //TODO: 가로모드와 세로모드의 셀 사이징이 다름. 
@@ -94,8 +72,25 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
         let height: CGFloat = width
         return CGSize(width: width, height: height)
     }
-    
-    
 }
-
-
+//MARK: action events
+extension TodoViewController {
+    @objc func didTappedHeaderViewButton(){
+        let vc = self.storyboard?.instantiateViewController(identifier: "ModalViewController") as! ModalViewController
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
+    }
+    
+    func fetchTasks(){
+        do{
+            self.items = try context.fetch(Todo.fetchRequest())
+            //manual mode 에서는 에러가남..
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        catch{
+            //do the tasks..
+        }
+    }
+}
