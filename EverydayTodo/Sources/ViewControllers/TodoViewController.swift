@@ -9,12 +9,15 @@ import UIKit
 import CoreData
 
 class TodoViewController: UIViewController {
-    //collectionView!
+    //collectionView outlet 추가!!
+    //[TODO] keyboard 가리지않게 올라오는거조정!
+    //date - date
+    //그냥 닫았을때 얼러트 띄우기 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    // Data for the collectionView
+    // Data for the collectionView, make it in a ViewModel
     var items: [Todo]?
     
     override func viewDidLoad() {
@@ -37,6 +40,7 @@ extension TodoViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 10.0
         let todo = self.items?[indexPath.row]
         cell.detail.text = todo?.detail
+        
         return cell
         
     }
@@ -47,7 +51,8 @@ extension TodoViewController: UICollectionViewDataSource {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
   
             //[TODO: 정리하기! ]
-            headerView.slider.value = 0.6
+            headerView.progressView.setProgress(1.0, animated: true)
+
             headerView.profileImage.makeRounded() //profile radius
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
             headerView.addTaskButton.addTarget(self, action: #selector(didTappedHeaderViewButton), for: .touchUpInside)
@@ -80,11 +85,10 @@ extension TodoViewController {
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
     }
-    
     func fetchTasks(){
         do{
             self.items = try context.fetch(Todo.fetchRequest())
-            //manual mode 에서는 에러가남..
+            //manual mode ////
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }

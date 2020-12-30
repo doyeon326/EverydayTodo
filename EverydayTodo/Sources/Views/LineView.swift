@@ -25,13 +25,10 @@ class SliderView: UISlider {
 class ProgressView: UIProgressView {
     override func layoutSubviews() {
         super.layoutSubviews()
-        
         let maskLayerPath = UIBezierPath(roundedRect: bounds, cornerRadius: self.frame.height / 2)
         let maskLayer = CAShapeLayer()
         maskLayer.frame = self.bounds
         maskLayer.path = maskLayerPath.cgPath
-        maskLayer.fillColor = UIColor.yellow.cgColor
-        
         layer.mask = maskLayer
     }
 }

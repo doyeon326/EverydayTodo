@@ -11,9 +11,9 @@ import BLTNBoard
 
 class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var addTaskButton: UIButton!
-    @IBOutlet weak var slider: SliderView!
     @IBOutlet weak var profileImage: UIImageView!
-    var uiViewController: UIViewController! 
+    var uiViewController: UIViewController!
+    @IBOutlet weak var progressView: ProgressView!
     
     func configure(){
         //do UISetups

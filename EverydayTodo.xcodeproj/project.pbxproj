@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A80ED70A08A0E84DC023BC38 /* Pods_EverydayTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */; };
+		EA35CE5E259A2E070009A51F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35CE5D259A2E070009A51F /* Todo.swift */; };
+		EA35CE61259C50920009A51F /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35CE60259C50920009A51F /* Date+Extensions.swift */; };
 		EA99FB71258CD24100E0D30D /* BLTNExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */; };
 		EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB77258D0D3500E0D30D /* ModalViewController.swift */; };
 		EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.debug.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.debug.xcconfig"; sourceTree = "<group>"; };
+		EA35CE5D259A2E070009A51F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		EA35CE60259C50920009A51F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLTNExtensions.swift; sourceTree = "<group>"; };
 		EA99FB77258D0D3500E0D30D /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
@@ -163,6 +167,7 @@
 		EACB126125879FDF00B80F59 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				EA35CE5D259A2E070009A51F /* Todo.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -218,6 +223,7 @@
 			children = (
 				EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */,
 				EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */,
+				EA35CE60259C50920009A51F /* Date+Extensions.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -344,6 +350,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA35CE61259C50920009A51F /* Date+Extensions.swift in Sources */,
 				EABC54AD258B64D90092DF9B /* HeaderCollectionReusableView.swift in Sources */,
 				EACB124F258799BC00B80F59 /* EverydayTodo.xcdatamodeld in Sources */,
 				EA99FB71258CD24100E0D30D /* BLTNExtensions.swift in Sources */,
@@ -355,6 +362,7 @@
 				EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */,
 				EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */,
 				EABC54AA258B5B070092DF9B /* LineView.swift in Sources */,
+				EA35CE5E259A2E070009A51F /* Todo.swift in Sources */,
 				EACB1247258799BC00B80F59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
