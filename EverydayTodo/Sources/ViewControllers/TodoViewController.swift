@@ -54,7 +54,7 @@ extension TodoViewController: UICollectionViewDataSource {
 
             headerView.profileImage.makeRounded() //profile radius
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
-            headerView.addTaskButton.addTarget(self, action: #selector(didTappedHeaderViewButton), for: .touchUpInside)
+            headerView.addTaskButton.addTarget(self, action: #selector(showModal), for: .touchUpInside)
             return headerView
         default:
             assert(false, "dd")
@@ -79,7 +79,7 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
 }
 //MARK: action events
 extension TodoViewController {
-    @objc func didTappedHeaderViewButton(){
+    @objc func showModal(){
         let vc = self.storyboard?.instantiateViewController(identifier: "ModalViewController") as! ModalViewController
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
@@ -124,18 +124,24 @@ extension TodoViewController {
     }
 }
 //MARK: Context Menu
+//TODO: try to make it somewhere else to reuse it just in case.
 extension TodoViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
-        configureContextMenu()
+        configureContextMenu(index: indexPath.row)
     }
-    func configureContextMenu() -> UIContextMenuConfiguration{
+    func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
             
             let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
                 print("edit button clicked")
+                self.showModal()
+                
             }
             let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
-                print("edit button clicked")
+                print("delete button clicked")
+                TodoManager.shared.deleteTodo(self.items?[index] ?? Todo() )
+                //self.items?.remove(at: index) //TODO: should move to the manager.
+                self.fetchTasks() //ISSUE: getting delayed.
             }
             return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
             

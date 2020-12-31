@@ -23,8 +23,9 @@ class TodoManager {
         saveTodo()
     }
     
-    func deleteTodo(){
-        
+    func deleteTodo(_ todo: Todo){
+        self.context.delete(todo)
+        saveTodo()
     }
     
     func updateTodo(){
