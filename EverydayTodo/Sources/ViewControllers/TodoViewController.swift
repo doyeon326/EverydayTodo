@@ -8,10 +8,9 @@
 import UIKit
 import CoreData
 
-class TodoViewController: UIViewController {
+class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
     //collectionView outlet 추가!!
     //[TODO] keyboard 가리지않게 올라오는거조정!
-    //date - date
     //그냥 닫았을때 얼러트 띄우기 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
@@ -22,7 +21,7 @@ class TodoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        setupLongGestureRecognizerOnCollection()
         fetchTasks()
     }
 }
@@ -88,13 +87,39 @@ extension TodoViewController {
     func fetchTasks(){
         do{
             self.items = try context.fetch(Todo.fetchRequest())
-            //manual mode ////
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
         catch{
-            //do the tasks..
+            print(error.localizedDescription)
         }
     }
+    
+    private func setupLongGestureRecognizerOnCollection() {
+        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+                 lpgr.minimumPressDuration = 0.5
+                 lpgr.delaysTouchesBegan = true
+                 lpgr.delegate = self
+                 self.collectionView.addGestureRecognizer(lpgr)
+    }
+    
+    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
+        
+        guard gestureReconizer.state != .began else { return }
+        let point = gestureReconizer.location(in: self.collectionView)
+        let indexPath = self.collectionView.indexPathForItem(at: point)
+        if let index = indexPath{
+            let cell = self.collectionView.cellForItem(at: index)
+            //[TODO] 처음 눌렸을때만 색이면함
+            //mode: editing 으로 바꾸기!
+            //완료 될시, mode = default
+            cell?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15)
+            print(index.row)
+            }
+        else{
+            print("Could not find index path")
+            }
+    }
 }
+

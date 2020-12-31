@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import BLTNBoard
 
 
 class HeaderCollectionReusableView: UICollectionReusableView {

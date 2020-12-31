@@ -2,7 +2,7 @@
 //  Todo+CoreDataProperties.swift
 //  EverydayTodo
 //
-//  Created by Tony Jung on 2020/12/28.
+//  Created by Tony Jung on 2020/12/31.
 //
 //
 
@@ -16,10 +16,10 @@ extension Todo {
         return NSFetchRequest<Todo>(entityName: "Todo")
     }
 
-    @NSManaged public var isDone: Bool
-    @NSManaged public var id: Int64
+    @NSManaged public var date: Date?
     @NSManaged public var detail: String?
-    @NSManaged public var date: String?
+    @NSManaged public var id: Int64
+    @NSManaged public var isDone: Bool
 
 }
 

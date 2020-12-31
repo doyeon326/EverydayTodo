@@ -88,7 +88,6 @@
                                             <outlet property="day" destination="tbl-5M-Han" id="jAJ-pk-NMq"/>
                                             <outlet property="detail" destination="ZQA-CF-9QY" id="0Df-jP-JZx"/>
                                             <outlet property="month" destination="aC0-n6-wXt" id="WQu-AH-qCh"/>
-                                            <outletCollection property="gestureRecognizers" destination="YdY-fU-cUC" appends="YES" id="UpH-R9-Xoj"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -170,7 +169,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="YdY-fU-cUC"/>
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="83.705357142857139"/>
         </scene>
