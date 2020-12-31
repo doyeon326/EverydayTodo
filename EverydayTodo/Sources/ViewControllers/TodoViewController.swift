@@ -115,6 +115,7 @@ extension TodoViewController {
             //mode: editing 으로 바꾸기!
             //완료 될시, mode = default
             cell?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15)
+            
             print(index.row)
             }
         else{
@@ -122,4 +123,24 @@ extension TodoViewController {
             }
     }
 }
-
+//MARK: Context Menu
+extension TodoViewController: UICollectionViewDelegate{
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        configureContextMenu()
+    }
+    func configureContextMenu() -> UIContextMenuConfiguration{
+        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
+            
+            let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
+                print("edit button clicked")
+            }
+            let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
+                print("edit button clicked")
+            }
+            return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
+            
+        }
+        return context
+    }
+    
+}
