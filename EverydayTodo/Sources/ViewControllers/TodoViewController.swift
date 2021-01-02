@@ -11,11 +11,10 @@ import CoreData
 class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
     //collectionView outlet 추가!!
     //[TODO] keyboard 가리지않게 올라오는거조정!
-    //그냥 닫았을때 얼러트 띄우기 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    let todoListViewModel = TodoViewModel()
     // Data for the collectionView, make it in a ViewModel
     var items: [Todo]?
     
@@ -129,11 +128,13 @@ extension TodoViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         configureContextMenu(index: indexPath.row)
     }
+    
     func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
             
             let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
                 print("edit button clicked")
+                //[Todo: update the status of the mode. HOW? ]
                 self.showModal()
                 
             }
@@ -143,6 +144,7 @@ extension TodoViewController: UICollectionViewDelegate{
                 //self.items?.remove(at: index) //TODO: should move to the manager.
                 self.fetchTasks() //ISSUE: getting delayed.
             }
+            
             return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
             
         }
