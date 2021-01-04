@@ -10,13 +10,14 @@ import CoreData
 
 class TodoManager {
     static let shared = TodoManager()
+    //static var lastId: Int = 0
     var todos: [Todo] = []
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     func addTodo(detail: String, date: Date, id: Int, isDone: Bool){
+        //let nextId = TodoManager.lastId + 1
         let newTodo = Todo(context: self.context)
-        
         newTodo.detail = detail
         newTodo.date = date
         newTodo.isDone = isDone
@@ -34,6 +35,7 @@ class TodoManager {
         //print("update todo! \(todo.detail)")
         saveTodo()
     }
+
     
     func saveTodo(){
         do{
@@ -94,6 +96,9 @@ class TodoViewModel{
     }
     func fetchMode() -> CurrentMode {
         return mode
+    }
+    func saveToday(){
+        manager.saveTodo()
     }
  
 }

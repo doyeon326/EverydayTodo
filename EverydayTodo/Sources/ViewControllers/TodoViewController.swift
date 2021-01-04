@@ -29,7 +29,15 @@ extension TodoViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
-        cell.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        
+        if todoListViewModel.todos[indexPath.row].isDone == true {
+            cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+        }
+        else{
+            cell.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        }
+        
+        
             //[UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
         cell.layer.cornerRadius = 10.0
         let todo = self.todoListViewModel.todos[indexPath.row]
@@ -60,7 +68,18 @@ extension TodoViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else { return }
-        cell.contentView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+    
+        if todoListViewModel.todos[indexPath.row].isDone == false {
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            
+        }
+        else{
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+        }
+        todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
+        todoListViewModel.saveToday()
+        
+        
         //[TODO]CoreData에다가 뭐가 저장이 되었고 안되었는지 저장해야함!
     }
 }
@@ -81,7 +100,6 @@ extension TodoViewController {
         let vc = self.storyboard?.instantiateViewController(identifier: "ModalViewController") as! ModalViewController
         vc.modalTransitionStyle = .crossDissolve
         vc.modalViewModel = todoListViewModel
-        print("---?????\(todoListViewModel.fetchMode())")
         if todoListViewModel.fetchMode() == .edit{
             vc.todos = todoListViewModel.todos[index as! Int]
         }

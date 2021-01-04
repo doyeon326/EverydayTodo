@@ -15,8 +15,6 @@ class ModalViewController: UIViewController {
     var todos: Todo?
 
     override func viewDidLoad() {
-        
-        print("fetch mode: \(modalViewModel.fetchMode())")
         super.viewDidLoad()
         updateUI()
     }
@@ -33,7 +31,6 @@ extension ModalViewController{
     }
     
     @IBAction func submitButtonTapped(_ sender: Any) {
-        print("fetch mode2: \(modalViewModel.fetchMode())")
         switch modalViewModel.fetchMode() {
         case .write:
             modalViewModel.addTodo(detail: modalTF.text!, date: datePicker.date, id: 1, isDone: false)
