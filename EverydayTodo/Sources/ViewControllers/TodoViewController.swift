@@ -9,38 +9,32 @@ import UIKit
 import CoreData
 
 class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
-    //collectionView outlet 추가!!
     //[TODO] keyboard 가리지않게 올라오는거조정!
-    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
     let todoListViewModel = TodoViewModel()
-    // Data for the collectionView, make it in a ViewModel
-    var items: [Todo]?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupLongGestureRecognizerOnCollection()
-        fetchTasks()
+        //setupLongGestureRecognizerOnCollection()
+        todoListViewModel.loadTasks()
+        print("--> todolistViewmodel data: \(todoListViewModel.todos.count)")
     }
 }
 
 extension TodoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items!.count
+        return todoListViewModel.todos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
-        
         cell.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
             //[UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
         cell.layer.cornerRadius = 10.0
-        let todo = self.items?[indexPath.row]
-        cell.detail.text = todo?.detail
-        
+        let todo = self.todoListViewModel.todos[indexPath.row]
+        cell.detail.text = todo.detail
         return cell
-        
     }
     //Header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -54,6 +48,11 @@ extension TodoViewController: UICollectionViewDataSource {
             headerView.profileImage.makeRounded() //profile radius
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
             headerView.addTaskButton.addTarget(self, action: #selector(showModal), for: .touchUpInside)
+            //[question: How to implement the code below?]
+//            headerView.addTaskButton = UIButton(type: .system, primaryAction: UIAction(handler: { (_) in
+//                self.showModal()
+//                self.todoListViewModel.updateMode(.write)
+//            }))
             return headerView
         default:
             assert(false, "dd")
@@ -78,23 +77,23 @@ extension TodoViewController: UICollectionViewDelegateFlowLayout {
 }
 //MARK: action events
 extension TodoViewController {
-    @objc func showModal(){
+    @objc func showModal(index: NSNumber?){
         let vc = self.storyboard?.instantiateViewController(identifier: "ModalViewController") as! ModalViewController
         vc.modalTransitionStyle = .crossDissolve
+        vc.modalViewModel = todoListViewModel
+        print("---?????\(todoListViewModel.fetchMode())")
+        if todoListViewModel.fetchMode() == .edit{
+            vc.todos = todoListViewModel.todos[index as! Int]
+        }
         present(vc, animated: true, completion: nil)
-    }
-    func fetchTasks(){
-        do{
-            self.items = try context.fetch(Todo.fetchRequest())
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
-        }
-        catch{
-            print(error.localizedDescription)
-        }
+       
     }
     
+    func fetchTasks(){
+            todoListViewModel.loadTasks()
+            self.collectionView.reloadData()
+    }
+    //Long gesture recognizer
     private func setupLongGestureRecognizerOnCollection() {
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
                  lpgr.minimumPressDuration = 0.5
@@ -134,15 +133,15 @@ extension TodoViewController: UICollectionViewDelegate{
             
             let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
                 print("edit button clicked")
-                //[Todo: update the status of the mode. HOW? ]
-                self.showModal()
-                
+                self.todoListViewModel.updateMode(.edit)
+                self.showModal(index: index as NSNumber)
+
             }
             let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
                 print("delete button clicked")
-                TodoManager.shared.deleteTodo(self.items?[index] ?? Todo() )
-                //self.items?.remove(at: index) //TODO: should move to the manager.
-                self.fetchTasks() //ISSUE: getting delayed.
+                //TodoManager.shared.deleteTodo(self.items?[index] ?? Todo() )
+                self.todoListViewModel.deleteTodo(self.todoListViewModel.todos[index])
+                self.fetchTasks()
             }
             
             return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])

@@ -29,8 +29,10 @@ class TodoManager {
         saveTodo()
     }
     
-    func updateTodo(){
-        
+    func updateTodo(_ todo: Todo){
+        //todos = todo
+        //print("update todo! \(todo.detail)")
+        saveTodo()
     }
     
     func saveTodo(){
@@ -43,23 +45,28 @@ class TodoManager {
         }
     }
     func retrieveTodo(){
-        
+        do{
+            self.todos = try context.fetch(Todo.fetchRequest())
+        }
+        catch{
+            print(error.localizedDescription)
+        }
     }
 }
 
 class TodoViewModel{
-    enum Mode: Int, CaseIterable {
+    enum CurrentMode: Int, CaseIterable {
         case edit
         case write
         
-        var currentMode: String{
+        var title: String{
             switch self {
             case .edit: return "edit"
             case .write: return "write"
             }
         }
     }
-    
+    private (set) var mode: CurrentMode = .write
     private let manager = TodoManager.shared
     
     var todos: [Todo] {
@@ -77,10 +84,17 @@ class TodoViewModel{
         manager.deleteTodo(todo)
     }
     func updateTodo(_ todo: Todo){
-        manager.updateTodo()
+        manager.updateTodo(todo)
+        
     }
     func loadTasks() {
         manager.retrieveTodo()
+    }
+    func updateMode(_ mode: CurrentMode){
+        self.mode = mode
+    }
+    func fetchMode() -> CurrentMode {
+        return mode
     }
  
 }
