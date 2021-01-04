@@ -77,15 +77,14 @@ class TodoViewModel{
         return todos.filter { $0.isDone == true }
     }
     
-    func addTodo(_ todo: Todo){
-      //  manager.addTodo(detail: <#T##String#>, date: <#T##Date#>, id: <#T##Int#>, isDone: <#T##Bool#>)
+    func addTodo(detail: String, date: Date, id: Int, isDone: Bool){
+        manager.addTodo(detail: detail, date: date, id: id, isDone: isDone)
     }
     func deleteTodo(_ todo: Todo){
         manager.deleteTodo(todo)
     }
     func updateTodo(_ todo: Todo){
         manager.updateTodo(todo)
-        
     }
     func loadTasks() {
         manager.retrieveTodo()

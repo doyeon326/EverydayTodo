@@ -36,7 +36,8 @@ extension ModalViewController{
         print("fetch mode2: \(modalViewModel.fetchMode())")
         switch modalViewModel.fetchMode() {
         case .write:
-            TodoManager.shared.addTodo(detail: modalTF.text!, date: datePicker.date, id: 1, isDone: false)
+            modalViewModel.addTodo(detail: modalTF.text!, date: datePicker.date, id: 1, isDone: false)
+    
         case .edit:
             todos?.detail = modalTF.text
             todos?.date = datePicker.date
