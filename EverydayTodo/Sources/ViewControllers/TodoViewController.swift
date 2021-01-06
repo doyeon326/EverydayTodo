@@ -10,7 +10,11 @@ import CoreData
 
 class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
     //[TODO] keyboard 가리지않게 올라오는거조정!
-
+    //[TODO] progressbar 계산
+    // add UI개선
+    // 프로파일과 이름 바꾸기!
+    // 색 바꾸기 [customize color?]
+    // 날짜 계산
     @IBOutlet weak var collectionView: UICollectionView!
     let todoListViewModel = TodoViewModel()
 
