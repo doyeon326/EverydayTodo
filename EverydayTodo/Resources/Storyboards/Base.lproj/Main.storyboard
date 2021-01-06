@@ -181,7 +181,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHf-cd-RcC">
-                                <rect key="frame" x="10" y="364" width="394" height="498"/>
+                                <rect key="frame" x="10" y="512" width="394" height="350"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2De-NC-1fm">
                                         <rect key="frame" x="353" y="20" width="21" height="22"/>
@@ -208,11 +208,20 @@
                                         </constraints>
                                     </datePicker>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4m-cy-pHF">
-                                        <rect key="frame" x="176.5" y="446" width="41" height="30"/>
+                                        <rect key="frame" x="47" y="278" width="300" height="50"/>
                                         <color key="backgroundColor" red="0.95802943549999997" green="0.3880471251" blue="0.40996620179999999" alpha="0.97999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="56P-Rc-BS3"/>
+                                            <constraint firstAttribute="width" constant="300" id="kq7-Q6-UDj"/>
+                                        </constraints>
                                         <state key="normal" title="Done!">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="submitButtonTapped:" destination="bhL-dl-iOF" eventType="touchUpInside" id="Xcg-bl-TH3"/>
                                         </connections>
@@ -232,6 +241,7 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="8Qw-IM-jcf"/>
                                     <constraint firstItem="hGV-nc-FBq" firstAttribute="leading" secondItem="yNM-OI-KR1" secondAttribute="leading" id="8h4-2S-UJZ"/>
                                     <constraint firstAttribute="trailing" secondItem="yNM-OI-KR1" secondAttribute="trailing" constant="40" id="9Ra-xz-4Zn"/>
                                     <constraint firstItem="xCv-ah-ufx" firstAttribute="trailing" secondItem="9m9-zA-HuN" secondAttribute="trailing" id="CAO-D6-IdY"/>
@@ -262,18 +272,26 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AHf-cd-RcC" firstAttribute="leading" secondItem="7EY-fE-bUU" secondAttribute="leading" constant="10" id="AHW-yD-v7s"/>
-                            <constraint firstItem="AHf-cd-RcC" firstAttribute="top" secondItem="7EY-fE-bUU" secondAttribute="top" constant="320" id="Tib-2W-6vL"/>
                             <constraint firstItem="7EY-fE-bUU" firstAttribute="bottom" secondItem="AHf-cd-RcC" secondAttribute="bottom" id="mUX-vC-RQq"/>
                             <constraint firstItem="7EY-fE-bUU" firstAttribute="trailing" secondItem="AHf-cd-RcC" secondAttribute="trailing" constant="10" id="t4N-yh-tTi"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4v9-JQ-uqa" appends="YES" id="2se-89-zrl"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="zn3-PR-LQ8"/>
                     <connections>
                         <outlet property="datePicker" destination="9m9-zA-HuN" id="PyA-PT-Nd6"/>
+                        <outlet property="inputViewBottom" destination="mUX-vC-RQq" id="lr7-PF-Bw4"/>
                         <outlet property="modalTF" destination="yNM-OI-KR1" id="opP-Gs-20M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOV-G7-vYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4v9-JQ-uqa">
+                    <connections>
+                        <action selector="tapBG:" destination="bhL-dl-iOF" id="xwH-At-oSL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="809" y="84"/>
         </scene>

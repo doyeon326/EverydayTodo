@@ -9,19 +9,24 @@ import UIKit
 
 class ModalViewController: UIViewController {
     
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     @IBOutlet weak var modalTF: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     var modalViewModel = TodoViewModel()
     var todos: Todo?
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     func updateUI(){
         modalTF.text = todos?.detail
     }
 }
+
 //MARK: ACTIONS
 extension ModalViewController{
     @IBAction func closeButtonTapped(_ sender: Any) {
@@ -53,5 +58,25 @@ extension ModalViewController{
         }
         dismiss(animated: true, completion: nil)
     }
-
+    
+    @IBAction func tapBG(_ sender: Any) {
+        modalTF.resignFirstResponder()
+    }
+    
+    @objc private func adjustInputView(noti: Notification) {
+        guard let userInfo = noti.userInfo else { return }
+        guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+        if noti.name == UIResponder.keyboardWillShowNotification {
+            let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
+            inputViewBottom.constant = adjustmentHeight
+            
+            
+        }
+        else {
+            inputViewBottom.constant = 0
+        }
+        //print("\(keyboardFrame)")
+    }
 }
+
+
