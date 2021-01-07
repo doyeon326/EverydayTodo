@@ -9,6 +9,7 @@
 import Foundation
 
 extension Date{
+    //[] i dont know how to make it better. 
     func toString() -> String {
         let formatter = DateFormatter()
         formatter.timeZone = .current
@@ -17,13 +18,20 @@ extension Date{
         return formatter.string(from: self)
     }
     func getDate() -> String{
-        return ""
+        //return Calendar.current.component(.day, from: self)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd"
+        return formatter.string(from: self)
     }
     func getDay() -> String{
-        return ""
+        let formatter = DateFormatter()
+        formatter.dateFormat = "E"
+        return formatter.string(from: self)
     }
-    func getMonth() -> String{
-        return ""
+    func getMonthString() -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMMM"
+        return formatter.string(from: self)
     }
 }
 

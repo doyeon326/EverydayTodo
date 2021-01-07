@@ -9,7 +9,6 @@ import UIKit
 import CoreData
 
 class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
-    //[TODO] keyboard 가리지않게 올라오는거조정!
     //[TODO] progressbar 계산
     // add UI개선
     // 프로파일과 이름 바꾸기!
@@ -46,6 +45,11 @@ extension TodoViewController: UICollectionViewDataSource {
         cell.layer.cornerRadius = 10.0
         let todo = self.todoListViewModel.todos[indexPath.row]
         cell.detail.text = todo.detail
+        cell.day.text = todo.date?.getDay()
+        cell.date.text = todo.date?.getDate()
+        cell.month.text = todo.date?.getMonthString()
+        
+        //cell.date.text = todo.date?.toString()
         return cell
     }
     //Header

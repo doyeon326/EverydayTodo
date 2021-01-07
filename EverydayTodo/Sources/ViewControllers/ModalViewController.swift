@@ -18,9 +18,10 @@ class ModalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUI()
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        updateUI()
     }
     func updateUI(){
         modalTF.text = todos?.detail
@@ -47,10 +48,6 @@ extension ModalViewController{
             todos?.isDone = false
             modalViewModel.updateTodo(todos ?? Todo())
         }
-        
-//        print(modalTF.text ?? 0)
-//        let date = datePicker.date.toString()
-//        print("0000000\(date)")
 
         if let vc = presentingViewController as? TodoViewController {
             vc.fetchTasks()
@@ -69,8 +66,6 @@ extension ModalViewController{
         if noti.name == UIResponder.keyboardWillShowNotification {
             let adjustmentHeight = keyboardFrame.height - view.safeAreaInsets.bottom
             inputViewBottom.constant = adjustmentHeight
-            
-            
         }
         else {
             inputViewBottom.constant = 0
