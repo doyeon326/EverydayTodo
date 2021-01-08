@@ -12,6 +12,7 @@ class TodoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var day: UILabel!
     @IBOutlet weak var detail: UILabel!
+    @IBOutlet weak var checkMark: UIImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()

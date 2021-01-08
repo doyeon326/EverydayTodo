@@ -3,13 +3,14 @@
 //  EverydayTodo
 //
 //  Created by Tony Jung on 2020/12/30.
-//
+//  ref : https://www.zerotoappstore.com/get-year-month-day-from-date-swift.html
 
 
 import Foundation
 
 extension Date{
-    //[] i dont know how to make it better. 
+    //[] i dont know how to make it better.
+  
     func toString() -> String {
         let formatter = DateFormatter()
         formatter.timeZone = .current
@@ -30,7 +31,7 @@ extension Date{
     }
     func getMonthString() -> String{
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMMM"
+        formatter.dateFormat = "MMM"
         return formatter.string(from: self)
     }
 }

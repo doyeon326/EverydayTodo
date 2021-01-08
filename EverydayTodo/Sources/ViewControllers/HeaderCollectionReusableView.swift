@@ -13,6 +13,7 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var profileImage: UIImageView!
     var uiViewController: UIViewController!
     @IBOutlet weak var progressView: ProgressView!
+    @IBOutlet weak var percentage: UILabel!
     
     func configure(){
         //do UISetups

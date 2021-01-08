@@ -34,10 +34,12 @@ extension TodoViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
         
         if todoListViewModel.todos[indexPath.row].isDone == true {
-            cell.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1) //끝났을때
+            cell.checkMark.isHidden = false
         }
         else{
-            cell.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+            cell.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1) //안끝났을때
+            cell.checkMark.isHidden = true
         }
         
         
@@ -59,10 +61,13 @@ extension TodoViewController: UICollectionViewDataSource {
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
   
             //[TODO: 정리하기! ]
-            headerView.progressView.setProgress(1.0, animated: true)
+            let percentage = todoListViewModel.calculatePercentage()
+            
+            headerView.progressView.setProgress(Float(percentage) / 100, animated: true)
 
             headerView.profileImage.makeRounded() //profile radius
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
+            headerView.percentage.text = "\(percentage)%"
             headerView.addTaskButton.addTarget(self, action: #selector(showModal), for: .touchUpInside)
             //[question: How to implement the code below?]
 //            headerView.addTaskButton = UIButton(type: .system, primaryAction: UIAction(handler: { (_) in
@@ -75,14 +80,16 @@ extension TodoViewController: UICollectionViewDataSource {
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? TodoCollectionViewCell else { return }
     
         if todoListViewModel.todos[indexPath.row].isDone == false {
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)
-            
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+            cell.checkMark.isHidden = false
         }
         else{
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1)
+            cell.contentView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
+            cell.checkMark.isHidden = true
+            
         }
         todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
         todoListViewModel.saveToday()
@@ -112,13 +119,13 @@ extension TodoViewController {
             vc.todos = todoListViewModel.todos[index as! Int]
         }
         present(vc, animated: true, completion: nil)
-       
     }
     
     func fetchTasks(){
             todoListViewModel.loadTasks()
             self.collectionView.reloadData()
     }
+    
     //Long gesture recognizer
     private func setupLongGestureRecognizerOnCollection() {
         let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
@@ -153,7 +160,7 @@ extension TodoViewController: UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
         configureContextMenu(index: indexPath.row)
     }
-    
+ 
     func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
         let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
             
