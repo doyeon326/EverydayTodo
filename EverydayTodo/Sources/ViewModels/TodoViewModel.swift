@@ -53,10 +53,11 @@ class TodoViewModel{
     }
     func calculatePercentage() -> Int {
         let completed = todos.filter { $0.isDone == true }
-        print(completed.count)
-        print(todos.count)
-        print(completed.count / todos.count * 100)
-        return completed.count * 100 / todos.count
+        if (completed.count > 0){
+            return completed.count * 100 / todos.count
+        }
+        else { return 0 }
+       
     }
  
 }

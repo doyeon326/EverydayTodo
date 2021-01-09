@@ -69,6 +69,7 @@ extension TodoViewController: UICollectionViewDataSource {
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
             headerView.percentage.text = "\(percentage)%"
             headerView.addTaskButton.addTarget(self, action: #selector(showModal), for: .touchUpInside)
+            headerView.changeProfileButton.addTarget(self, action: #selector(changeProfile), for: .touchUpInside)
             //[question: How to implement the code below?]
 //            headerView.addTaskButton = UIButton(type: .system, primaryAction: UIAction(handler: { (_) in
 //                self.showModal()
@@ -80,22 +81,9 @@ extension TodoViewController: UICollectionViewDataSource {
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) as? TodoCollectionViewCell else { return }
-    
-        if todoListViewModel.todos[indexPath.row].isDone == false {
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
-            cell.checkMark.isHidden = false
-        }
-        else{
-            cell.contentView.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)
-            cell.checkMark.isHidden = true
-            
-        }
         todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
         todoListViewModel.saveToday()
-        
-        
-        //[TODO]CoreData에다가 뭐가 저장이 되었고 안되었는지 저장해야함!
+        collectionView.reloadData()
     }
 }
 
@@ -153,6 +141,11 @@ extension TodoViewController {
             print("Could not find index path")
             }
     }
+    @objc func changeProfile(){
+        print("clicked")
+    }
+    
+
 }
 //MARK: Context Menu
 //TODO: try to make it somewhere else to reuse it just in case.
