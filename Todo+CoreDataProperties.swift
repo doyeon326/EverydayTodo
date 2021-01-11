@@ -2,7 +2,7 @@
 //  Todo+CoreDataProperties.swift
 //  EverydayTodo
 //
-//  Created by Tony Jung on 2020/12/31.
+//  Created by Tony Jung on 2021/01/10.
 //
 //
 

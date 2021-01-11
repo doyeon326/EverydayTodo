@@ -24,7 +24,7 @@ class ModalViewController: UIViewController {
         updateUI()
     }
     func updateUI(){
-        modalTF.text = todos?.detail
+        modalTF?.text = todos?.detail 
     }
 }
 

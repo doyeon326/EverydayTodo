@@ -130,19 +130,18 @@ extension TodoViewController {
         let indexPath = self.collectionView.indexPathForItem(at: point)
         if let index = indexPath{
             let cell = self.collectionView.cellForItem(at: index)
-            //[TODO] 처음 눌렸을때만 색이면함
-            //mode: editing 으로 바꾸기!
-            //완료 될시, mode = default
             cell?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15)
-            
             print(index.row)
             }
         else{
             print("Could not find index path")
             }
     }
+    
     @objc func changeProfile(){
-        print("clicked")
+        guard let vc = (self.storyboard?.instantiateViewController(identifier: "EditProfileViewController") as? EditProfileViewController) else { return }
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
     
 

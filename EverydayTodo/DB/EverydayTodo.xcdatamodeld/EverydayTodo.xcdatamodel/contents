@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Profile" representedClassName="Profile" syncable="YES">
+        <attribute name="nickName" optional="YES" attributeType="String"/>
+        <attribute name="profileImg" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+    </entity>
     <entity name="Todo" representedClassName="Todo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="detail" optional="YES" attributeType="String"/>
@@ -8,5 +12,6 @@
     </entity>
     <elements>
         <element name="Todo" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="Profile" positionX="-63" positionY="9" width="128" height="59"/>
     </elements>
 </model>

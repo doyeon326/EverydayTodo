@@ -31,8 +31,6 @@ class TodoManager {
     }
     
     func updateTodo(_ todo: Todo){
-        //todos = todo
-        //print("update todo! \(todo.detail)")
         saveTodo()
     }
 
