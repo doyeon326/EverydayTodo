@@ -28,7 +28,7 @@ class EditProfileViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileViewModel.fetchProfile()
+      //  profileViewModel.fetchProfile()
         setUpUI()
         
         

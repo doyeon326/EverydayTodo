@@ -16,12 +16,14 @@ class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
     // 날짜 계산
     @IBOutlet weak var collectionView: UICollectionView!
     let todoListViewModel = TodoViewModel()
+    let profileViewModel = ProfileViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         //setupLongGestureRecognizerOnCollection()
         todoListViewModel.loadTasks()
-        print("--> todolistViewmodel data: \(todoListViewModel.todos.count)")
+        profileViewModel.fetchProfile()
+
     }
 }
 
@@ -66,6 +68,9 @@ extension TodoViewController: UICollectionViewDataSource {
             headerView.progressView.setProgress(Float(percentage) / 100, animated: true)
 
             headerView.profileImage.makeRounded() //profile radius
+            let convertedImage = profileViewModel.profile.last?.profileImg
+            headerView.profileImage.image = UIImage(data: convertedImage ?? Data())
+            headerView.nickName.text = profileViewModel.profile.last?.nickName
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
             headerView.percentage.text = "\(percentage)%"
             headerView.addTaskButton.addTarget(self, action: #selector(showModal), for: .touchUpInside)

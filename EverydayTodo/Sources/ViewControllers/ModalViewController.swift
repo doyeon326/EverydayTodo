@@ -8,7 +8,7 @@
 import UIKit
 
 class ModalViewController: UIViewController {
-    
+    //[TODO: 업데이트 할때마다 TODOViewController reload()]
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     @IBOutlet weak var modalTF: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
