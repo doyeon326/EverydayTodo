@@ -30,9 +30,7 @@ class ProfileManager {
     
     func fetchProfile() {
         do{
-            
             self.profile = try context.fetch(Profile.fetchRequest())
-            print(profile.count)
         }
         catch{
             print(error.localizedDescription)
@@ -49,18 +47,3 @@ class ProfileManager {
     }
 }
 
-class ProfileViewModel {
-    private let manager = ProfileManager.shared
-    
-    var profile : [Profile] {
-        return manager.profile
-    }
-    func setUpProfile(nickName: String, profileImg: Data){
-        manager.setUpProfile(nickName: nickName, profileImg: profileImg)
-    }
-    func fetchProfile(){
-        manager.fetchProfile()
-  
-        
-    }
-}

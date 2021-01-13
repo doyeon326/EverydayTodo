@@ -41,6 +41,9 @@ class EditProfileViewController: UIViewController  {
 
     @IBAction func doneButtonTapped(_ sender: Any) {
         profileViewModel.setUpProfile(nickName: nickNameTF.text ?? "0", profileImg: profileImage.image?.pngData() ?? Data())
+        if let vc = presentingViewController as? TodoViewController {
+            vc.fetchTasks()
+        }
         dismiss(animated: true, completion: nil)
     }
     

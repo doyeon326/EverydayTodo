@@ -116,37 +116,17 @@ extension TodoViewController {
     
     func fetchTasks(){
             todoListViewModel.loadTasks()
+            profileViewModel.fetchProfile()
             self.collectionView.reloadData()
     }
     
-    //Long gesture recognizer
-    private func setupLongGestureRecognizerOnCollection() {
-        let lpgr = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
-                 lpgr.minimumPressDuration = 0.5
-                 lpgr.delaysTouchesBegan = true
-                 lpgr.delegate = self
-                 self.collectionView.addGestureRecognizer(lpgr)
-    }
     
-    @objc func handleLongPress(gestureReconizer: UILongPressGestureRecognizer) {
-        
-        guard gestureReconizer.state != .began else { return }
-        let point = gestureReconizer.location(in: self.collectionView)
-        let indexPath = self.collectionView.indexPathForItem(at: point)
-        if let index = indexPath{
-            let cell = self.collectionView.cellForItem(at: index)
-            cell?.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.15)
-            print(index.row)
-            }
-        else{
-            print("Could not find index path")
-            }
-    }
-    
+
     @objc func changeProfile(){
         guard let vc = (self.storyboard?.instantiateViewController(identifier: "EditProfileViewController") as? EditProfileViewController) else { return }
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
+
     }
     
 
