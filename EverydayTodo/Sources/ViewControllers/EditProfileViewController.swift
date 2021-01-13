@@ -34,6 +34,16 @@ class EditProfileViewController: UIViewController  {
         
     }
     
+    @IBAction func tapColor(_ sender: UIButton) {
+        switch sender.tag {
+        case 0: profileViewModel.updateColor(.marigold)
+        case 1: profileViewModel.updateColor(.coraulean)
+        case 2: profileViewModel.updateColor(.greenAsh)
+        case 3: profileViewModel.updateColor(.BurntCoral)
+        default: break;
+        }
+        
+    }
     @IBAction func tapBG(_ sender: Any) {
         nickNameTF.resignFirstResponder()
     }

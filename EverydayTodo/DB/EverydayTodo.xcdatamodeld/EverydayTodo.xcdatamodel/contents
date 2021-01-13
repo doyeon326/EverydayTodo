@@ -3,6 +3,7 @@
     <entity name="Profile" representedClassName="Profile" syncable="YES">
         <attribute name="nickName" optional="YES" attributeType="String"/>
         <attribute name="profileImg" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES"/>
+        <attribute name="themeColor" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Todo" representedClassName="Todo" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -11,7 +12,7 @@
         <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
     </entity>
     <elements>
+        <element name="Profile" positionX="-63" positionY="9" width="128" height="74"/>
         <element name="Todo" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Profile" positionX="-63" positionY="9" width="128" height="59"/>
     </elements>
 </model>

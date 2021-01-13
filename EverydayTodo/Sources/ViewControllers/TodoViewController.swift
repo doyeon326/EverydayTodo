@@ -36,7 +36,8 @@ extension TodoViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
         
         if todoListViewModel.todos[indexPath.row].isDone == true {
-            cell.backgroundColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1) //끝났을때
+
+            cell.backgroundColor = profileViewModel.color.rgb
             cell.checkMark.isHidden = false
         }
         else{
