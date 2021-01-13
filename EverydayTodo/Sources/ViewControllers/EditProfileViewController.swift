@@ -12,6 +12,7 @@ class EditProfileViewController: UIViewController  {
     
     @IBOutlet weak var profileImage: UIImageView!
     var profileViewModel = ProfileViewModel()
+    @IBOutlet weak var submitButton: UIButton!
     var profile: Profile?
 
     
@@ -109,10 +110,12 @@ extension EditProfileViewController {
         }
     }
     func setUpUI(){
+        profileViewModel.fetchColor()
         self.profileImage.makeRounded()
         let fetchImage = profileViewModel.profile.last?.profileImg
         profileImage?.image = UIImage(data: fetchImage ?? Data() )
         nickNameTF.text = profileViewModel.profile.last?.nickName
+        submitButton.backgroundColor = profileViewModel.color.rgb
     }
 }
 

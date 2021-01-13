@@ -10,9 +10,12 @@ import UIKit
 class ModalViewController: UIViewController {
     //[TODO: 업데이트 할때마다 TODOViewController reload()]
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
+    @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var modalTF: UITextField!
+    @IBOutlet weak var alertButton: UISwitch!
     @IBOutlet weak var datePicker: UIDatePicker!
     var modalViewModel = TodoViewModel()
+    var profileViewModel = ProfileViewModel()
     var todos: Todo?
 
 
@@ -20,11 +23,14 @@ class ModalViewController: UIViewController {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
         updateUI()
+        view.layoutIfNeeded()
     }
     func updateUI(){
-        modalTF?.text = todos?.detail 
+        profileViewModel.fetchColor()
+        submitButton.backgroundColor = profileViewModel.color.rgb
+        modalTF?.text = todos?.detail
+        alertButton.onTintColor = profileViewModel.color.rgb
     }
 }
 

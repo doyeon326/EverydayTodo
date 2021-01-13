@@ -328,9 +328,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="zn3-PR-LQ8"/>
                     <connections>
+                        <outlet property="alertButton" destination="xCv-ah-ufx" id="Lsa-oi-Ceq"/>
                         <outlet property="datePicker" destination="9m9-zA-HuN" id="PyA-PT-Nd6"/>
                         <outlet property="inputViewBottom" destination="mUX-vC-RQq" id="W9Q-uU-upo"/>
                         <outlet property="modalTF" destination="yNM-OI-KR1" id="opP-Gs-20M"/>
+                        <outlet property="submitButton" destination="f4m-cy-pHF" id="zq8-Qb-QFm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IOV-G7-vYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -403,6 +405,10 @@
                                                     <constraint firstAttribute="width" secondItem="edY-DZ-Eem" secondAttribute="height" multiplier="1:1" id="D0d-aO-DFp"/>
                                                     <constraint firstAttribute="width" constant="30" id="PV4-Qa-jmO"/>
                                                 </constraints>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal">
+                                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.borderRadius">
                                                         <integer key="value" value="2"/>
@@ -534,6 +540,7 @@
                     <connections>
                         <outlet property="nickNameTF" destination="5Zt-Vl-a11" id="0bA-0M-gJL"/>
                         <outlet property="profileImage" destination="Vvv-E8-Ugj" id="iRQ-jz-o4K"/>
+                        <outlet property="submitButton" destination="ize-e7-dNj" id="qrQ-Rt-BIR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVB-EO-IK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

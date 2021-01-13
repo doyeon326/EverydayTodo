@@ -41,13 +41,17 @@ extension TodoViewController: UICollectionViewDataSource {
             cell.checkMark.isHidden = false
         }
         else{
-            cell.backgroundColor = #colorLiteral(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1) //안끝났을때
+            cell.backgroundColor = profileViewModel.color.unselected
             cell.checkMark.isHidden = true
         }
-        
-        
             //[UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
         cell.layer.cornerRadius = 10.0
+//        cell.layer.shadowColor = UIColor.gray.cgColor
+//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+//        cell.layer.shadowRadius = 3.0
+//        cell.layer.shadowOpacity = 0.5
+//        cell.layer.masksToBounds = false
+//        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
         let todo = self.todoListViewModel.todos[indexPath.row]
         cell.detail.text = todo.detail
         cell.day.text = todo.date?.getDay()
@@ -67,7 +71,7 @@ extension TodoViewController: UICollectionViewDataSource {
             let percentage = todoListViewModel.calculatePercentage()
             
             headerView.progressView.setProgress(Float(percentage) / 100, animated: true)
-
+            headerView.progressView.progressTintColor = profileViewModel.color.rgb
             headerView.profileImage.makeRounded() //profile radius
             let convertedImage = profileViewModel.profile.last?.profileImg
             headerView.profileImage.image = UIImage(data: convertedImage ?? Data())
