@@ -31,6 +31,7 @@
 		EACB1251258799C100B80F59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EACB1250258799C100B80F59 /* Assets.xcassets */; };
 		EACB1254258799C100B80F59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACB1252258799C100B80F59 /* LaunchScreen.storyboard */; };
 		EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */; };
+		EADADFD025AFD12900933590 /* 32585-fireworks-display.json in Resources */ = {isa = PBXBuildFile; fileRef = EADADFCF25AFD12800933590 /* 32585-fireworks-display.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		EACB1253258799C100B80F59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EACB1255258799C100B80F59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCollectionViewCell.swift; sourceTree = "<group>"; };
+		EADADFCF25AFD12800933590 /* 32585-fireworks-display.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "32585-fireworks-display.json"; sourceTree = "<group>"; };
 		F381C864C153B0F7B76F40CB /* Pods-EverydayTodo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.release.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -144,6 +146,7 @@
 		EACB125D25879F3D00B80F59 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				EADADFCF25AFD12800933590 /* 32585-fireworks-display.json */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 				EACB1254258799C100B80F59 /* LaunchScreen.storyboard in Resources */,
 				EACB1251258799C100B80F59 /* Assets.xcassets in Resources */,
 				EACB124C258799BC00B80F59 /* Main.storyboard in Resources */,
+				EADADFD025AFD12900933590 /* 32585-fireworks-display.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

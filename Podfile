@@ -7,5 +7,6 @@ target 'EverydayTodo' do
 
   # Pods for EverydayTodo
 pod 'BulletinBoard'
+pod 'lottie-ios'
 
 end

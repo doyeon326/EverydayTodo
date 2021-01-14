@@ -7,23 +7,22 @@
 
 import UIKit
 import CoreData
+import Lottie
 
 class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
-    //[TODO] progressbar 계산
-    // add UI개선
-    // 프로파일과 이름 바꾸기!
-    // 색 바꾸기 [customize color?]
-    // 날짜 계산
     @IBOutlet weak var collectionView: UICollectionView!
     let todoListViewModel = TodoViewModel()
     let profileViewModel = ProfileViewModel()
+    let animationView = AnimationView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      //  setupAnimation()
         //setupLongGestureRecognizerOnCollection()
         todoListViewModel.loadTasks()
         profileViewModel.fetchProfile()
-
+       
+        
     }
 }
 
@@ -67,11 +66,17 @@ extension TodoViewController: UICollectionViewDataSource {
         case UICollectionView.elementKindSectionHeader:
             guard let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerView", for: indexPath) as? HeaderCollectionReusableView else { return UICollectionReusableView() }
   
+            //animation
+         
+            
             //[TODO: 정리하기! ]
             let percentage = todoListViewModel.calculatePercentage()
             
             headerView.progressView.setProgress(Float(percentage) / 100, animated: true)
             headerView.progressView.progressTintColor = profileViewModel.color.rgb
+            if percentage == 100 {
+                setupAnimation()
+            }
             headerView.profileImage.makeRounded() //profile radius
             let convertedImage = profileViewModel.profile.last?.profileImg
             headerView.profileImage.image = UIImage(data: convertedImage ?? Data())
@@ -132,6 +137,17 @@ extension TodoViewController {
         vc.modalTransitionStyle = .crossDissolve
         present(vc, animated: true, completion: nil)
 
+    }
+    func setupAnimation(){
+        animationView.frame = view.bounds
+        animationView.backgroundColor = .clear
+        animationView.animation = Animation.named("32585-fireworks-display")
+        animationView.contentMode = .scaleAspectFit
+        //animationView.loopMode = .loop
+        animationView.isUserInteractionEnabled = false
+        animationView.frame = CGRect(x: 50, y: 80, width: 150, height: 150)
+        view.addSubview(animationView)
+        animationView.play()
     }
     
 
