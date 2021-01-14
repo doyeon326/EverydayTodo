@@ -7,16 +7,35 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    let notificationCenter = UNUserNotificationCenter.current()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // ask for permission which includes 경고창, 배지, 사운드를 사용하는알림 환경 정보를 생성하고, 사용자 동의 여부창을 실행.
+        requestAuthForLocalNotifications()
+        
         return true
     }
+    
+    func requestAuthForLocalNotifications(){
+        notificationCenter.delegate = self
+        let options: UNAuthorizationOptions = [.alert, .sound, .badge]
+        notificationCenter.requestAuthorization(options: options) { (didAllow, error) in
+            if !didAllow {
+                print("User has declined notification")
+            }
+        }
+        
+    }
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+    //handling own action
+//        if let customData = response.notification.request.content.userInfo["CustomData"] as? String {
+//            let todoVC = window
+//        }
+//    }
 
     // MARK: UISceneSession Lifecycle
 

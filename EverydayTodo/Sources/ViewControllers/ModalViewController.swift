@@ -8,7 +8,7 @@
 import UIKit
 
 class ModalViewController: UIViewController {
-    //[TODO: 업데이트 할때마다 TODOViewController reload()]
+
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var modalTF: UITextField!
@@ -30,6 +30,7 @@ class ModalViewController: UIViewController {
         profileViewModel.fetchColor()
         submitButton.backgroundColor = profileViewModel.color.rgb
         modalTF?.text = todos?.detail
+        datePicker.date = todos?.date ?? Date()
         alertButton.onTintColor = profileViewModel.color.rgb
     }
 }
@@ -54,7 +55,10 @@ extension ModalViewController{
             todos?.isDone = false
             modalViewModel.updateTodo(todos ?? Todo())
         }
-
+        //alarm 이 on 라면,,
+        //off 라면 cancel
+        scheduleLocalNotification()
+        
         if let vc = presentingViewController as? TodoViewController {
             vc.fetchTasks()
             vc.todoListViewModel.updateMode(.write)
@@ -77,6 +81,37 @@ extension ModalViewController{
             inputViewBottom.constant = 0
         }
         //print("\(keyboardFrame)")
+    }
+    func scheduleLocalNotification(){
+        let content = UNMutableNotificationContent()
+        content.title = "Complete your TODO"
+        guard let text = modalTF.text else { return }
+        content.body = text
+        content.sound = UNNotificationSound.default
+       
+        //content.userInfo = [ modalTF.text : "any information"]
+        
+       var dateInfo = DateComponents()
+        dateInfo.day = Calendar.current.component(.day, from: datePicker.date)
+        dateInfo.month = Calendar.current.component(.month, from: datePicker.date)
+        dateInfo.year = Calendar.current.component(.year, from: datePicker.date)
+        dateInfo.hour = Calendar.current.component(.hour, from: datePicker.date)
+        dateInfo.minute = Calendar.current.component(.minute, from: datePicker.date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
+        
+        //create the request
+       // let uuidString = UUID().uuidString
+        //알림 요청이 여러개 일때, 알림들을 구분할수 있게 해주는 식별자.
+        let request = UNNotificationRequest(identifier: modalTF.text ?? "0", content: content, trigger: trigger)
+        
+        // Schedule the request with the system
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { (error) in
+            if error != nil{
+                print("error in notification! ")
+            }
+        }
     }
 }
 
