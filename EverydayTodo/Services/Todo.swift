@@ -14,12 +14,13 @@ class TodoManager {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    func addTodo(detail: String, date: Date, id: Int, isDone: Bool){
+    func addTodo(detail: String, date: Date, id: Int, isDone: Bool, isAlarmOn: Bool){
         let newTodo = Todo(context: self.context)
         newTodo.detail = detail
         newTodo.date = date
         newTodo.isDone = isDone
         newTodo.id = Int64(id)
+        newTodo.isAlarmOn = isAlarmOn
         saveTodo()
     }
     

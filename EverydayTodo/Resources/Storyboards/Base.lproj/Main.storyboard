@@ -284,7 +284,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="DgB-6K-Dus" firstAttribute="centerX" secondItem="AHf-cd-RcC" secondAttribute="centerX" id="4qw-07-JBo"/>
                                     <constraint firstAttribute="height" constant="350" id="8Qw-IM-jcf"/>
@@ -500,7 +500,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="5Zt-Vl-a11" firstAttribute="top" secondItem="Vvv-E8-Ugj" secondAttribute="bottom" constant="15" id="4sP-AG-bKO"/>
                                     <constraint firstItem="ize-e7-dNj" firstAttribute="top" secondItem="O1i-9m-4Ao" secondAttribute="bottom" constant="20" id="6fM-0n-xdV"/>

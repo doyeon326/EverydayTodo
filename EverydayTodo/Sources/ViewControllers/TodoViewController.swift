@@ -80,7 +80,12 @@ extension TodoViewController: UICollectionViewDataSource {
             }
             headerView.profileImage.makeRounded() //profile radius
             let convertedImage = profileViewModel.profile.last?.profileImg
-            headerView.profileImage.image = UIImage(data: convertedImage ?? Data())
+            if convertedImage != nil {
+                headerView.profileImage.image = UIImage(data: convertedImage ?? Data())
+            }
+            else {
+                headerView.profileImage.image = UIImage(systemName: "person.fill")?.withTintColor(.gray, renderingMode: .alwaysOriginal)
+            }
             headerView.nickName.text = profileViewModel.profile.last?.nickName
             headerView.uiViewController = self //할수잇는방법2개 1. 현재의 정보를 보내기, 2. actionhandler구현해서 사용하기.
             headerView.percentage.text = "\(percentage)%"
@@ -173,6 +178,7 @@ extension TodoViewController: UICollectionViewDelegate{
                 print("delete button clicked")
                 //TodoManager.shared.deleteTodo(self.items?[index] ?? Todo() )
                 self.todoListViewModel.deleteTodo(self.todoListViewModel.todos[index])
+                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.todoListViewModel.todos[index].detail ?? "")"])
                 self.fetchTasks()
             }
             
