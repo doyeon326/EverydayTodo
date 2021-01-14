@@ -9,7 +9,8 @@ import UIKit
 import CoreData
 import Lottie
 
-class TodoViewController: UIViewController, UIGestureRecognizerDelegate {
+class TodoViewController: UIViewController {
+    
     @IBOutlet weak var collectionView: UICollectionView!
     let todoListViewModel = TodoViewModel()
     let profileViewModel = ProfileViewModel()

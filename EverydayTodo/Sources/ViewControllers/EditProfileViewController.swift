@@ -13,6 +13,7 @@ class EditProfileViewController: UIViewController  {
     @IBOutlet weak var profileImage: UIImageView!
     var profileViewModel = ProfileViewModel()
     @IBOutlet weak var submitButton: UIButton!
+    @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     var profile: Profile?
 
     
@@ -23,13 +24,15 @@ class EditProfileViewController: UIViewController  {
         return picker
     }()
     
-// [TODO] 컬러, 키보드처리(글로벌로빼기), 알림, 사진, 100 퍼센트 되었을때 애니메이션 추가하기
+// [TODO] 키보드처리(글로벌로빼기)
     
     @IBOutlet weak var nickNameTF: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
       //  profileViewModel.fetchProfile()
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         setUpUI()
         
         
@@ -68,7 +71,6 @@ extension EditProfileViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.profileImage.image = image
-            
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -81,7 +83,6 @@ extension EditProfileViewController {
     @IBAction func ImageButtonTapped(_ sender: Any) {
         checkPermission()
     }
-    
     @IBAction func closeButtonTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -116,6 +117,18 @@ extension EditProfileViewController {
         profileImage?.image = UIImage(data: fetchImage ?? Data() )
         nickNameTF.text = profileViewModel.profile.last?.nickName
         submitButton.backgroundColor = profileViewModel.color.rgb
+    }
+    
+    @objc private func adjustInputView(noti: Notification) {
+         guard let userInfo = noti.userInfo else { return }
+         guard let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+         if noti.name == UIResponder.keyboardWillShowNotification {
+              let adjustmentHeight = keyboardFrame.height -      view.safeAreaInsets.bottom
+              inputViewBottom.constant = adjustmentHeight
+         }
+         else {
+              inputViewBottom.constant = 0
+         }
     }
 }
 

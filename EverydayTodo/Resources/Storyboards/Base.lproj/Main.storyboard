@@ -538,6 +538,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ea9-E0-QfA"/>
                     <connections>
+                        <outlet property="inputViewBottom" destination="BDV-xP-Npv" id="tnN-7b-3IT"/>
                         <outlet property="nickNameTF" destination="5Zt-Vl-a11" id="0bA-0M-gJL"/>
                         <outlet property="profileImage" destination="Vvv-E8-Ugj" id="iRQ-jz-o4K"/>
                         <outlet property="submitButton" destination="ize-e7-dNj" id="qrQ-Rt-BIR"/>
