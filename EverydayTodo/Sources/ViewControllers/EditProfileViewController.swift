@@ -15,6 +15,7 @@ class EditProfileViewController: UIViewController  {
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var inputViewBottom: NSLayoutConstraint!
     var profile: Profile?
+    @IBOutlet var collectionOfButtons: Array<UIButton>?
 
     
     lazy var imagePicker: UIImagePickerController = {
@@ -34,8 +35,7 @@ class EditProfileViewController: UIViewController  {
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(adjustInputView), name: UIResponder.keyboardWillHideNotification, object: nil)
         setUpUI()
-        
-        
+  
     }
     
     @IBAction func tapColor(_ sender: UIButton) {
@@ -46,13 +46,13 @@ class EditProfileViewController: UIViewController  {
         case 3: profileViewModel.updateColor(.BurntCoral)
         default: break;
         }
+        collectionOfButtons?[sender.tag].showsTouchWhenHighlighted = true
         
     }
     @IBAction func tapBG(_ sender: Any) {
         nickNameTF.resignFirstResponder()
     }
     
-
     @IBAction func doneButtonTapped(_ sender: Any) {
         profileViewModel.setUpProfile(nickName: nickNameTF.text ?? "0", profileImg: profileImage.image?.pngData() ?? Data())
         if let vc = presentingViewController as? TodoViewController {

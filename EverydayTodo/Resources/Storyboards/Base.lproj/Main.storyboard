@@ -542,6 +542,10 @@
                         <outlet property="nickNameTF" destination="5Zt-Vl-a11" id="0bA-0M-gJL"/>
                         <outlet property="profileImage" destination="Vvv-E8-Ugj" id="iRQ-jz-o4K"/>
                         <outlet property="submitButton" destination="ize-e7-dNj" id="qrQ-Rt-BIR"/>
+                        <outletCollection property="collectionOfButtons" destination="edY-DZ-Eem" collectionClass="NSMutableArray" id="Pt1-kH-dgG"/>
+                        <outletCollection property="collectionOfButtons" destination="MSp-nU-duk" collectionClass="NSMutableArray" id="wgj-Jv-30Q"/>
+                        <outletCollection property="collectionOfButtons" destination="x0B-Xz-Qa6" collectionClass="NSMutableArray" id="59J-FO-cIT"/>
+                        <outletCollection property="collectionOfButtons" destination="lWw-tx-BX3" collectionClass="NSMutableArray" id="k8J-XV-4NA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QVB-EO-IK2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
