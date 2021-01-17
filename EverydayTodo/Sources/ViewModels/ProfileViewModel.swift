@@ -15,6 +15,7 @@ class ProfileViewModel {
         case BurntCoral
         
         var rgb: UIColor{
+            //[STUDY : Color]
             switch self {
             case .marigold: return UIColor(red: 255/255.0, green: 173/255.0, blue: 74/255.0, alpha: 1)
             case .coraulean: return UIColor(red: 152/255.0, green: 180/255.0, blue: 216/255.0, alpha: 1)

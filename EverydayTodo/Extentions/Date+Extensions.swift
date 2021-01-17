@@ -10,7 +10,7 @@ import Foundation
 
 extension Date{
     //[] i dont know how to make it better.
-  
+    //[STUDY : DATE]
     func toString() -> String {
         let formatter = DateFormatter()
         formatter.timeZone = .current

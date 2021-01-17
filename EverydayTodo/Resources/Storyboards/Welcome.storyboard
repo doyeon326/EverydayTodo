@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="8c2-OC-jn2">
+            <objects>
+                <viewController storyboardIdentifier="welcome" id="jnd-gX-7FP" customClass="WelcomeViewController" customModule="EverydayTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fDc-31-Kgs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sgc-fC-KmQ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="H7e-aE-6d3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Sgc-fC-KmQ" secondAttribute="trailing" id="09v-nQ-kqz"/>
+                            <constraint firstAttribute="bottom" secondItem="Sgc-fC-KmQ" secondAttribute="bottom" id="8Lw-uW-fwq"/>
+                            <constraint firstItem="Sgc-fC-KmQ" firstAttribute="top" secondItem="fDc-31-Kgs" secondAttribute="top" id="bjB-Cu-dxK"/>
+                            <constraint firstItem="Sgc-fC-KmQ" firstAttribute="leading" secondItem="fDc-31-Kgs" secondAttribute="leading" id="xjq-Qa-bwU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="holderView" destination="Sgc-fC-KmQ" id="NP7-8F-K3C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kYj-XZ-aTm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-404.34782608695656" y="-78.348214285714278"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

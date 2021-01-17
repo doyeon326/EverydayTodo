@@ -18,12 +18,19 @@ class TodoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  setupAnimation()
-        //setupLongGestureRecognizerOnCollection()
         todoListViewModel.loadTasks()
         profileViewModel.fetchProfile()
-       
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if Core.shared.isNewUser() {
+            // show onboarding
+            let sb = UIStoryboard(name: "Welcome", bundle: nil)
+            let vc = sb.instantiateViewController(identifier: "welcome") as! WelcomeViewController
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true, completion: nil)
+        }
     }
 }
 

@@ -40,10 +40,10 @@ class EditProfileViewController: UIViewController  {
     
     @IBAction func tapColor(_ sender: UIButton) {
         switch sender.tag {
-        case 0: profileViewModel.updateColor(.marigold)
-        case 1: profileViewModel.updateColor(.coraulean)
+        case 0: profileViewModel.updateColor(.BurntCoral)
+        case 1: profileViewModel.updateColor(.marigold)
         case 2: profileViewModel.updateColor(.greenAsh)
-        case 3: profileViewModel.updateColor(.BurntCoral)
+        case 3: profileViewModel.updateColor(.coraulean)
         default: break;
         }
         collectionOfButtons?[sender.tag].showsTouchWhenHighlighted = true
@@ -54,6 +54,7 @@ class EditProfileViewController: UIViewController  {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
+        //[STUDY: Convert IMAGE TO View]
         profileViewModel.setUpProfile(nickName: nickNameTF.text ?? "0", profileImg: profileImage.image?.pngData() ?? Data())
         if let vc = presentingViewController as? TodoViewController {
             vc.fetchTasks()
