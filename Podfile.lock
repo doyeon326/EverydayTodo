@@ -1,20 +1,16 @@
 PODS:
-  - BulletinBoard (5.0.0)
   - lottie-ios (3.1.9)
 
 DEPENDENCIES:
-  - BulletinBoard
   - lottie-ios
 
 SPEC REPOS:
   trunk:
-    - BulletinBoard
     - lottie-ios
 
 SPEC CHECKSUMS:
-  BulletinBoard: dba77053c2a7b64953f63073f7534165af2edd21
   lottie-ios: 3a3758ef5a008e762faec9c9d50a39842f26d124
 
-PODFILE CHECKSUM: c496faf8f199bc395970080d66a47c3fd4169358
+PODFILE CHECKSUM: b0dbb103e9355687b15329d5789c026695035d99
 
 COCOAPODS: 1.9.3

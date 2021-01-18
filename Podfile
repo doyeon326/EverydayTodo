@@ -6,7 +6,7 @@ target 'EverydayTodo' do
   use_frameworks!
 
   # Pods for EverydayTodo
-pod 'BulletinBoard'
+
 pod 'lottie-ios'
 
 end

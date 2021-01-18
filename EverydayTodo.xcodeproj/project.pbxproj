@@ -22,7 +22,6 @@
 		EA5A518425AAB24700B8DF61 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A518025AAB24700B8DF61 /* Todo+CoreDataProperties.swift */; };
 		EA5A519025AAB3E800B8DF61 /* EverydayTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EACB124D258799BC00B80F59 /* EverydayTodo.xcdatamodeld */; };
 		EA5A519325AB0A0E00B8DF61 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A519225AB0A0E00B8DF61 /* Profile.swift */; };
-		EA99FB71258CD24100E0D30D /* BLTNExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */; };
 		EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB77258D0D3500E0D30D /* ModalViewController.swift */; };
 		EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */; };
 		EABC54AA258B5B070092DF9B /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EABC54A9258B5B070092DF9B /* LineView.swift */; };
@@ -53,7 +52,6 @@
 		EA5A517F25AAB24700B8DF61 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		EA5A518025AAB24700B8DF61 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		EA5A519225AB0A0E00B8DF61 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLTNExtensions.swift; sourceTree = "<group>"; };
 		EA99FB77258D0D3500E0D30D /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		EABC54A9258B5B070092DF9B /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
@@ -252,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				EABC54A3258B56BC0092DF9B /* ViewExtensions.swift */,
-				EA99FB70258CD24100E0D30D /* BLTNExtensions.swift */,
 				EA35CE60259C50920009A51F /* Date+Extensions.swift */,
 			);
 			path = Extentions;
@@ -389,7 +386,6 @@
 				EABC54AD258B64D90092DF9B /* HeaderCollectionReusableView.swift in Sources */,
 				EA5171B625A72323008183FA /* TodoViewModel.swift in Sources */,
 				EA44F0FC25B3E413008BC0D7 /* WelcomeViewController.swift in Sources */,
-				EA99FB71258CD24100E0D30D /* BLTNExtensions.swift in Sources */,
 				EACB1249258799BC00B80F59 /* TodoViewController.swift in Sources */,
 				EACB1245258799BC00B80F59 /* AppDelegate.swift in Sources */,
 				EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */,
