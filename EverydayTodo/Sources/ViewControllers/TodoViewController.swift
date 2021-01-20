@@ -20,6 +20,7 @@ class TodoViewController: UIViewController {
         super.viewDidLoad()
         todoListViewModel.loadTasks()
         profileViewModel.fetchProfile()
+        
     }
     
     override func viewDidLayoutSubviews() {

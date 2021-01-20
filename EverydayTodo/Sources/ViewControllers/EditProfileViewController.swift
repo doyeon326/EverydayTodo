@@ -46,6 +46,7 @@ class EditProfileViewController: UIViewController  {
         case 3: profileViewModel.updateColor(.coraulean)
         default: break;
         }
+        submitButton.backgroundColor = profileViewModel.color.rgb
         collectionOfButtons?[sender.tag].showsTouchWhenHighlighted = true
         
     }
