@@ -21,7 +21,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Sla-pB-Mlo">
                                 <rect key="frame" x="0.0" y="44" width="414" height="803"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="i1q-PN-9uQ">
                                     <size key="itemSize" width="172" height="163"/>
                                     <size key="headerReferenceSize" width="50" height="250"/>
@@ -46,14 +46,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dec" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aC0-n6-wXt">
-                                                    <rect key="frame" x="66.5" y="17" width="32" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="66.5" y="17" width="28.5" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbl-5M-Han">
-                                                    <rect key="frame" x="66.5" y="37.5" width="35.5" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <rect key="frame" x="66.5" y="35" width="32" height="18"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -162,7 +162,6 @@
                                             <rect key="frame" x="42" y="210" width="330" height="10"/>
                                             <color key="tintColor" red="0.95246714349999995" green="0.68640422820000002" blue="0.1370655298" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="330" id="VIR-Ew-HUD"/>
                                                 <constraint firstAttribute="height" constant="10" id="dLa-yQ-hXX"/>
                                             </constraints>
                                         </progressView>
@@ -171,9 +170,11 @@
                                         <constraint firstItem="IzX-h9-TU6" firstAttribute="centerX" secondItem="WIb-oZ-Mte" secondAttribute="centerX" id="4VD-wD-Xgw"/>
                                         <constraint firstItem="enJ-tk-tlc" firstAttribute="leading" secondItem="WIb-oZ-Mte" secondAttribute="leading" constant="10" id="T8u-JX-q6V"/>
                                         <constraint firstAttribute="bottom" secondItem="IzX-h9-TU6" secondAttribute="bottom" constant="30" id="TLm-0s-7BF"/>
+                                        <constraint firstAttribute="trailing" secondItem="IzX-h9-TU6" secondAttribute="trailing" constant="42" id="Xr3-EX-FU0"/>
                                         <constraint firstAttribute="trailing" secondItem="enJ-tk-tlc" secondAttribute="trailing" constant="87" id="dYV-tz-Tc4"/>
                                         <constraint firstItem="ML2-5V-94K" firstAttribute="centerX" secondItem="WIb-oZ-Mte" secondAttribute="centerX" id="hXi-BY-YIF"/>
                                         <constraint firstAttribute="trailing" secondItem="DHv-mk-hda" secondAttribute="trailing" constant="19" id="mlC-DZ-MNN"/>
+                                        <constraint firstItem="IzX-h9-TU6" firstAttribute="leading" secondItem="WIb-oZ-Mte" secondAttribute="leading" constant="42" id="pIz-eP-ggc"/>
                                         <constraint firstItem="DHv-mk-hda" firstAttribute="top" secondItem="WIb-oZ-Mte" secondAttribute="top" constant="13" id="uDu-XB-kJS"/>
                                         <constraint firstItem="enJ-tk-tlc" firstAttribute="top" secondItem="WIb-oZ-Mte" secondAttribute="top" constant="10" id="uRJ-R0-dAU"/>
                                         <constraint firstItem="ML2-5V-94K" firstAttribute="top" secondItem="tjb-HI-XUY" secondAttribute="bottom" constant="18" id="y2Q-yx-DI6"/>
@@ -194,7 +195,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Sla-pB-Mlo" secondAttribute="trailing" id="35Q-GN-Np5"/>
                             <constraint firstItem="Sla-pB-Mlo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3W3-YA-c8R"/>
@@ -233,6 +234,7 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tasks.." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="yNM-OI-KR1">
                                         <rect key="frame" x="40" y="70" width="314" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -254,7 +256,7 @@
                                             <constraint firstAttribute="height" constant="50" id="56P-Rc-BS3"/>
                                             <constraint firstAttribute="width" constant="300" id="kq7-Q6-UDj"/>
                                         </constraints>
-                                        <state key="normal" title="Done!">
+                                        <state key="normal" title="SAVE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -285,7 +287,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="DgB-6K-Dus" firstAttribute="centerX" secondItem="AHf-cd-RcC" secondAttribute="centerX" id="4qw-07-JBo"/>
                                     <constraint firstAttribute="height" constant="350" id="8Qw-IM-jcf"/>
@@ -373,7 +375,7 @@
                                             <constraint firstAttribute="width" constant="300" id="H6P-ap-XCe"/>
                                             <constraint firstAttribute="height" constant="50" id="wgc-e1-Ako"/>
                                         </constraints>
-                                        <state key="normal" title="Done!">
+                                        <state key="normal" title="SAVE">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -387,6 +389,7 @@
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nick Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5Zt-Vl-a11">
                                         <rect key="frame" x="40" y="156" width="314" height="34"/>
+                                        <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
@@ -501,7 +504,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="5Zt-Vl-a11" firstAttribute="top" secondItem="Vvv-E8-Ugj" secondAttribute="bottom" constant="15" id="4sP-AG-bKO"/>
                                     <constraint firstItem="ize-e7-dNj" firstAttribute="top" secondItem="O1i-9m-4Ao" secondAttribute="bottom" constant="20" id="6fM-0n-xdV"/>
@@ -568,11 +571,14 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
+        <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
