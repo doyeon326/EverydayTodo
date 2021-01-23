@@ -28,6 +28,13 @@ class ModalViewController: UIViewController {
     }
     func updateUI(){
         profileViewModel.fetchColor()
+        submitButton.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
+        if modalViewModel.fetchMode() == .edit {
+            submitButton.setTitle("SAVE", for: .normal)
+        }
+        else {
+            submitButton.setTitle("ADD", for: .normal)
+        }
         submitButton.backgroundColor = profileViewModel.color.rgb
         modalTF?.text = todos?.detail
         datePicker.date = todos?.date ?? Date()

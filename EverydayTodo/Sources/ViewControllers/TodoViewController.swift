@@ -37,38 +37,23 @@ class TodoViewController: UIViewController {
 
 extension TodoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todoListViewModel.todos.count
+        return todoListViewModel.todos.count + 1 // << add + 1 for AddCell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
-        
-        if todoListViewModel.todos[indexPath.row].isDone == true {
 
-            cell.backgroundColor = profileViewModel.color.rgb
-            cell.checkMark.isHidden = false
+        // check if row smaller than todoListViewModel.todos.count user cell else addCell to the last cell
+        if indexPath.row < todoListViewModel.todos.count {
+            cell.todoListData = todoListViewModel.todos[indexPath.row]
+            return cell
         }
-        else{
-            cell.backgroundColor = profileViewModel.color.unselected
-            cell.checkMark.isHidden = true
+        else {
+            let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddCell", for: indexPath) as! TodoAddCollectionViewCell
+            return addCell
         }
-            //[UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
-        cell.layer.cornerRadius = 10.0
-//        cell.layer.shadowColor = UIColor.gray.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        cell.layer.shadowRadius = 3.0
-//        cell.layer.shadowOpacity = 0.5
-//        cell.layer.masksToBounds = false
-//        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-        let todo = self.todoListViewModel.todos[indexPath.row]
-        cell.detail.text = todo.detail
-        cell.day.text = todo.date?.getDay()
-        cell.date.text = todo.date?.getDate()
-        cell.month.text = todo.date?.getMonthString()
-        
-        //cell.date.text = todo.date?.toString()
-        return cell
     }
+    
     //Header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
@@ -111,9 +96,16 @@ extension TodoViewController: UICollectionViewDataSource {
         return UICollectionReusableView()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
-        todoListViewModel.saveToday()
-        collectionView.reloadData()
+        
+        if indexPath.row < todoListViewModel.todos.count {
+            todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
+            todoListViewModel.saveToday()
+            collectionView.reloadData()
+        }
+        else {
+            // add new task
+            showModal(index: 0)
+        }
     }
 }
 

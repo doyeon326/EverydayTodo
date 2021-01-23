@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DDC933225BC3D83008206CC /* TodoAddCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDC933125BC3D83008206CC /* TodoAddCell.swift */; };
 		A80ED70A08A0E84DC023BC38 /* Pods_EverydayTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */; };
 		EA13F48D25AEAF190003AF92 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA13F48C25AEAF190003AF92 /* ProfileViewModel.swift */; };
 		EA35CE5E259A2E070009A51F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35CE5D259A2E070009A51F /* Todo.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DDC933125BC3D83008206CC /* TodoAddCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddCell.swift; sourceTree = "<group>"; };
 		71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.debug.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.debug.xcconfig"; sourceTree = "<group>"; };
 		EA13F48C25AEAF190003AF92 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 			isa = PBXGroup;
 			children = (
 				EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */,
+				4DDC933125BC3D83008206CC /* TodoAddCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				EA5A518125AAB24700B8DF61 /* Profile+CoreDataClass.swift in Sources */,
 				EA35CE61259C50920009A51F /* Date+Extensions.swift in Sources */,
 				EABC54AD258B64D90092DF9B /* HeaderCollectionReusableView.swift in Sources */,
+				4DDC933225BC3D83008206CC /* TodoAddCell.swift in Sources */,
 				EA5171B625A72323008183FA /* TodoViewModel.swift in Sources */,
 				EA44F0FC25B3E413008BC0D7 /* WelcomeViewController.swift in Sources */,
 				EACB1249258799BC00B80F59 /* TodoViewController.swift in Sources */,
@@ -547,17 +551,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 68663464K3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = EverydayTodo/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.doyeon.EverydayTodo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doyeon.EverydayTodos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -569,17 +574,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 68663464K3;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = EverydayTodo/Supportings/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.3;
-				PRODUCT_BUNDLE_IDENTIFIER = com.doyeon.EverydayTodo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.doyeon.EverydayTodos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

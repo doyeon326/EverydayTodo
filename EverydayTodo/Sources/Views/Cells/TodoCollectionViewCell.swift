@@ -8,17 +8,42 @@
 import UIKit
 
 class TodoCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var month: UILabel!
     @IBOutlet weak var day: UILabel!
     @IBOutlet weak var detail: UILabel!
     @IBOutlet weak var checkMark: UIImageView!
     
+    // Hi doyeon i move your code here from TodoViewController
+    let profileViewModel = ProfileViewModel()
+    var todoListData: Todo! {
+        didSet {
+            if todoListData.isDone == true {
+                backgroundColor = profileViewModel.color.rgb
+                checkMark.isHidden = false
+            }
+            else{
+                backgroundColor = profileViewModel.color.unselected
+                checkMark.isHidden = true
+            }
+            
+            detail.text = todoListData.detail
+            day.text = todoListData.date?.getDay()
+            date.text = todoListData.date?.getDate()
+            month.text = todoListData.date?.getMonthString()
+        }
+    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
         //재사용되기전
         //[TODO: 찾아보기! ]
     
         backgroundColor = nil
+    }
+    
+    override func awakeFromNib() {
+        layer.cornerRadius = 10.0
     }
 }

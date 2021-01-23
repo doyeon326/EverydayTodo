@@ -103,6 +103,24 @@
                                             <outlet property="month" destination="aC0-n6-wXt" id="WQu-AH-qCh"/>
                                         </connections>
                                     </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddCell" id="NIr-uv-a1t" customClass="TodoAddCollectionViewCell" customModule="EverydayTodo" customModuleProvider="target">
+                                        <rect key="frame" x="224" y="250" width="180" height="180"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QAo-lf-lHm">
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJk-c1-d7f">
+                                                    <rect key="frame" x="77.5" y="78" width="25" height="24"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xJk-c1-d7f" firstAttribute="centerY" secondItem="QAo-lf-lHm" secondAttribute="centerY" id="ICv-1e-nl9"/>
+                                                <constraint firstItem="xJk-c1-d7f" firstAttribute="centerX" secondItem="QAo-lf-lHm" secondAttribute="centerX" id="NC5-Gv-eJc"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="180" height="180"/>
+                                    </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerView" id="WIb-oZ-Mte" customClass="HeaderCollectionReusableView" customModule="EverydayTodo" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
