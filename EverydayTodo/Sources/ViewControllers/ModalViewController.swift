@@ -28,6 +28,13 @@ class ModalViewController: UIViewController {
     }
     func updateUI(){
         profileViewModel.fetchColor()
+        submitButton.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
+        if modalViewModel.fetchMode() == .edit {
+            submitButton.setTitle("SAVE", for: .normal)
+        }
+        else {
+            submitButton.setTitle("ADD", for: .normal)
+        }
         submitButton.backgroundColor = profileViewModel.color.rgb
         modalTF?.text = todos?.detail
         datePicker.date = todos?.date ?? Date()
@@ -65,9 +72,7 @@ extension ModalViewController{
         else{
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(modalTF.text ?? "")"])
         }
-        //alarm 이 on 라면,,
-        //off 라면 cancel
-        
+
         
         if let vc = presentingViewController as? TodoViewController {
             vc.fetchTasks()

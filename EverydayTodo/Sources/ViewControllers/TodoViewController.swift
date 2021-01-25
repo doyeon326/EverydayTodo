@@ -37,38 +37,22 @@ class TodoViewController: UIViewController {
 
 extension TodoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todoListViewModel.todos.count
+        return todoListViewModel.todos.count + 1 // add + 1 for AddCell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TodoCell", for: indexPath) as? TodoCollectionViewCell else { return UICollectionViewCell() }
-        
-        if todoListViewModel.todos[indexPath.row].isDone == true {
 
-            cell.backgroundColor = profileViewModel.color.rgb
-            cell.checkMark.isHidden = false
+        if indexPath.row < todoListViewModel.todos.count {
+            cell.todoListData = todoListViewModel.todos[indexPath.row]
+            return cell
         }
         else{
-            cell.backgroundColor = profileViewModel.color.unselected
-            cell.checkMark.isHidden = true
+            guard let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddCell", for: indexPath) as? TodoAddCollectionViewCell else { return TodoAddCollectionViewCell()}
+            return addCell
         }
-            //[UIColor.red, UIColor.blue, UIColor.yellow, UIColor.white].randomElement()
-        cell.layer.cornerRadius = 10.0
-//        cell.layer.shadowColor = UIColor.gray.cgColor
-//        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-//        cell.layer.shadowRadius = 3.0
-//        cell.layer.shadowOpacity = 0.5
-//        cell.layer.masksToBounds = false
-//        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.contentView.layer.cornerRadius).cgPath
-        let todo = self.todoListViewModel.todos[indexPath.row]
-        cell.detail.text = todo.detail
-        cell.day.text = todo.date?.getDay()
-        cell.date.text = todo.date?.getDate()
-        cell.month.text = todo.date?.getMonthString()
-        
-        //cell.date.text = todo.date?.toString()
-        return cell
     }
+    
     //Header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
@@ -99,6 +83,7 @@ extension TodoViewController: UICollectionViewDataSource {
             headerView.percentage.text = "\(percentage)%"
             headerView.addTaskButton.addTarget(self, action: #selector(showModal), for: .touchUpInside)
             headerView.changeProfileButton.addTarget(self, action: #selector(changeProfile), for: .touchUpInside)
+        
             //[question: How to implement the code below?]
 //            headerView.addTaskButton = UIButton(type: .system, primaryAction: UIAction(handler: { (_) in
 //                self.showModal()
@@ -111,9 +96,15 @@ extension TodoViewController: UICollectionViewDataSource {
         return UICollectionReusableView()
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
-        todoListViewModel.saveToday()
-        collectionView.reloadData()
+  
+        if indexPath.row < todoListViewModel.todos.count {
+            todoListViewModel.todos[indexPath.row].isDone = !todoListViewModel.todos[indexPath.row].isDone
+            todoListViewModel.saveToday()
+            collectionView.reloadData()
+        }
+        else {
+            showModal(index: indexPath.row as NSNumber)
+        }
     }
 }
 
@@ -175,26 +166,27 @@ extension TodoViewController: UICollectionViewDelegate{
     }
  
     func configureContextMenu(index: Int) -> UIContextMenuConfiguration{
-        let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
-            
-            let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
-                print("edit button clicked")
-                self.todoListViewModel.updateMode(.edit)
-                self.showModal(index: index as NSNumber)
-
+        if index < todoListViewModel.todos.count {
+            let context = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { (action) -> UIMenu? in
+                let edit = UIAction(title: "Edit", image: UIImage(systemName: "square.and.pencil"), identifier: nil, discoverabilityTitle: nil, state: .off) { (_) in
+                    print("edit button clicked")
+                    self.todoListViewModel.updateMode(.edit)
+                    self.showModal(index: index as NSNumber)
+                }
+                let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
+                    print("delete button clicked")
+                    //TodoManager.shared.deleteTodo(self.items?[index] ?? Todo() )
+                    self.todoListViewModel.deleteTodo(self.todoListViewModel.todos[index])
+                    UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.todoListViewModel.todos[index].detail ?? "")"])
+                    self.fetchTasks()
+                }
+                
+                return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
             }
-            let delete = UIAction(title: "Delete", image: UIImage(systemName: "trash"), identifier: nil, discoverabilityTitle: nil,attributes: .destructive, state: .off) { (_) in
-                print("delete button clicked")
-                //TodoManager.shared.deleteTodo(self.items?[index] ?? Todo() )
-                self.todoListViewModel.deleteTodo(self.todoListViewModel.todos[index])
-                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["\(self.todoListViewModel.todos[index].detail ?? "")"])
-                self.fetchTasks()
-            }
-            
-            return UIMenu(title: "Options", image: nil, identifier: nil, options: UIMenu.Options.displayInline, children: [edit,delete])
-            
+            return context
         }
-        return context
+        else {
+            return UIContextMenuConfiguration()
+        }
     }
-    
 }
