@@ -26,7 +26,7 @@ class TodoCollectionViewCell: UICollectionViewCell {
              }
              else{
                 self.backgroundColor = profileViewModel.color.unselected
-                 checkMark.isHidden = true
+                checkMark.isHidden = true
              }
 
              detail.text = todoListData.detail

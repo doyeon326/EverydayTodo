@@ -20,7 +20,9 @@ class TodoViewController: UIViewController {
         super.viewDidLoad()
         todoListViewModel.loadTasks()
         profileViewModel.fetchProfile()
-        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            layout.sectionHeadersPinToVisibleBounds = true
+        }
     }
     
     override func viewDidLayoutSubviews() {
@@ -49,6 +51,7 @@ extension TodoViewController: UICollectionViewDataSource {
         }
         else{
             guard let addCell = collectionView.dequeueReusableCell(withReuseIdentifier: "AddCell", for: indexPath) as? TodoAddCollectionViewCell else { return TodoAddCollectionViewCell()}
+            addCell.profileViewModel = profileViewModel
             return addCell
         }
     }

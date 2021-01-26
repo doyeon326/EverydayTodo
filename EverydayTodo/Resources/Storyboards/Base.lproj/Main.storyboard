@@ -174,10 +174,10 @@
                                             </constraints>
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHv-mk-hda">
-                                            <rect key="frame" x="373.5" y="13" width="21.5" height="22"/>
+                                            <rect key="frame" x="363.5" y="13" width="31.5" height="30"/>
                                             <color key="tintColor" systemColor="labelColor"/>
                                             <state key="normal" image="plus" catalog="system">
-                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="20"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30"/>
                                             </state>
                                         </button>
                                         <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="1" translatesAutoresizingMaskIntoConstraints="NO" id="IzX-h9-TU6" customClass="ProgressView" customModule="EverydayTodo" customModuleProvider="target">
@@ -188,6 +188,7 @@
                                             </constraints>
                                         </progressView>
                                     </subviews>
+                                    <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="IzX-h9-TU6" firstAttribute="centerX" secondItem="WIb-oZ-Mte" secondAttribute="centerX" id="4VD-wD-Xgw"/>
                                         <constraint firstItem="enJ-tk-tlc" firstAttribute="leading" secondItem="WIb-oZ-Mte" secondAttribute="leading" constant="10" id="T8u-JX-q6V"/>
