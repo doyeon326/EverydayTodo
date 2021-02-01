@@ -8,30 +8,29 @@
 
 import Foundation
 
-extension Date{
-    //[] i dont know how to make it better.
-    //[STUDY : DATE]
-    func toString() -> String {
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.dateFormat = "MM/dd/yyyy HH:mm:ss"
-        formatter.locale = .current
-        return formatter.string(from: self)
+extension Date {
+
+    enum DateFormatType: String {
+        case full
+        case date
+        case day
+        case month
+        
+        var dateFormatString: String {
+            switch self {
+            case .full: return "MM/dd/yyyy HH:mm:ss"
+            case .date: return "dd"
+            case .day: return "E"
+            case .month: return "MMM"
+            }
+        }
     }
-    func getDate() -> String{
-        //return Calendar.current.component(.day, from: self)
+    
+    func toString(formatType: DateFormatType, timeZone: TimeZone = .current, locale: Locale = .current) -> String {
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd"
-        return formatter.string(from: self)
-    }
-    func getDay() -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "E"
-        return formatter.string(from: self)
-    }
-    func getMonthString() -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = "MMM"
+        formatter.timeZone = timeZone
+        formatter.dateFormat = formatType.dateFormatString
+        formatter.locale = locale
         return formatter.string(from: self)
     }
 }

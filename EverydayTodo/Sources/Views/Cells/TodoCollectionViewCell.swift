@@ -30,9 +30,9 @@ class TodoCollectionViewCell: UICollectionViewCell {
              }
 
              detail.text = todoListData.detail
-             day.text = todoListData.date?.getDay()
-             date.text = todoListData.date?.getDate()
-             month.text = todoListData.date?.getMonthString()
+            day.text = todoListData.date?.toString(formatType: .day)
+            date.text = todoListData.date?.toString(formatType: .date)
+            month.text = todoListData.date?.toString(formatType: .month)
          }
      }
     

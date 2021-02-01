@@ -39,7 +39,7 @@ class TodoViewController: UIViewController {
 
 extension TodoViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return todoListViewModel.todos.count + 1 // add + 1 for AddCell
+        return todoListViewModel.todos.count  //+ 1 // add + 1 for AddCell
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
