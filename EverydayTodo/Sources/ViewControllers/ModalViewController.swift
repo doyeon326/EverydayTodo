@@ -27,6 +27,8 @@ class ModalViewController: UIViewController {
         view.layoutIfNeeded()
     }
     func updateUI(){
+        let now = Date()
+        datePicker.minimumDate = now
         profileViewModel.fetchColor()
         submitButton.titleLabel?.font = .systemFont(ofSize: 15, weight: .bold)
         if modalViewModel.fetchMode() == .edit {
