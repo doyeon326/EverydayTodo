@@ -1,6 +1,6 @@
 # EverydayTodo
 
-## Introducing EverydayTodo
+<h3>Introducing EverydayTodo</h3>
 
 Are you looking for a scheduling app right now? Have you ever had any difficulties using the app right after you downloaded it because of so many features provided and don’t know what to use? EverydayTodo provides you the simplest way to manage your tasks just in one.
 There are only necessary features and removed all the unnecessary pages to save your time!
