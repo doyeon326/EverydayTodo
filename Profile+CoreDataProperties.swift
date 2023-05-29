@@ -1,8 +1,8 @@
 //
 //  Profile+CoreDataProperties.swift
-//  EverydayTodo
+//  
 //
-//  Created by Tony Jung on 2021/01/13.
+//  Created by doyeon kim on 2023/05/29.
 //
 //
 
@@ -19,9 +19,5 @@ extension Profile {
     @NSManaged public var nickName: String?
     @NSManaged public var profileImg: Data?
     @NSManaged public var themeColor: String?
-
-}
-
-extension Profile : Identifiable {
 
 }

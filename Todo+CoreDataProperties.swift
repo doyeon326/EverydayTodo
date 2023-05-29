@@ -1,8 +1,8 @@
 //
 //  Todo+CoreDataProperties.swift
-//  EverydayTodo
+//  
 //
-//  Created by Tony Jung on 2021/01/14.
+//  Created by doyeon kim on 2023/05/29.
 //
 //
 
@@ -19,11 +19,8 @@ extension Todo {
     @NSManaged public var date: Date?
     @NSManaged public var detail: String?
     @NSManaged public var id: Int64
-    @NSManaged public var isDone: Bool
     @NSManaged public var isAlarmOn: Bool
-
-}
-
-extension Todo : Identifiable {
+    @NSManaged public var isArchive: Bool
+    @NSManaged public var isDone: Bool
 
 }

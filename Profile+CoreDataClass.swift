@@ -1,8 +1,8 @@
 //
 //  Profile+CoreDataClass.swift
-//  EverydayTodo
+//  
 //
-//  Created by Tony Jung on 2021/01/10.
+//  Created by doyeon kim on 2023/05/29.
 //
 //
 
@@ -13,4 +13,3 @@ import CoreData
 public class Profile: NSManagedObject {
 
 }
-
