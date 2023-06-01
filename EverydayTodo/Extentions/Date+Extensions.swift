@@ -29,8 +29,9 @@ extension Date {
     func toString(formatType: DateFormatType, timeZone: TimeZone = .current, locale: Locale = .current) -> String {
         let formatter = DateFormatter()
         formatter.timeZone = timeZone
+        
         formatter.dateFormat = formatType.dateFormatString
-        formatter.locale = locale
+        formatter.locale = Locale(identifier: "en_US") //for the mean time.. 
         return formatter.string(from: self)
     }
 }

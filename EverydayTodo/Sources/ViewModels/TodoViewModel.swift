@@ -23,19 +23,21 @@ class TodoViewModel{
     private let manager = TodoManager.shared
     
     var todos: [Todo] {
-        return manager.todos
+        return manager.todos.filter{ $0.isArchive == false }
     }
     
+
     var completeTodos: [Todo] {
         return todos.filter { $0.isDone == true }
     }
     
-    func addTodo(detail: String, date: Date, id: Int, isDone: Bool, isalarmOn: Bool){
-        manager.addTodo(detail: detail, date: date, id: id, isDone: isDone, isAlarmOn: isalarmOn)
+    func addTodo(detail: String, date: Date, id: Int, isDone: Bool, isalarmOn: Bool, isArchive: Bool = false){
+        manager.addTodo(detail: detail, date: date, id: id, isDone: isDone, isAlarmOn: isalarmOn, isArchive: isArchive)
     }
     func deleteTodo(_ todo: Todo){
         manager.deleteTodo(todo)
     }
+    
     func updateTodo(_ todo: Todo){
         manager.updateTodo(todo)
     }
@@ -59,5 +61,7 @@ class TodoViewModel{
         else { return 0 }
        
     }
+    
+
  
 }

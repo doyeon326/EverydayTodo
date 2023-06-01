@@ -20,3 +20,5 @@ class Core {
         UserDefaults.standard.set(true, forKey: "isNewUser")
     }
 }
+
+

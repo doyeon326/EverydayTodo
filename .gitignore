@@ -9,6 +9,7 @@
 #           - Also handy if you have a large number of dependant pods
 #           - AS PER https://guides.cocoapods.org/using/using-cocoapods.html NEVER IGNORE THE LOCK FILE
 Pods/
+.DS_store
 
 ### Objective-C ###
 # Xcode
@@ -17,7 +18,8 @@ Pods/
 
 ## User settings
 xcuserdata/
-
+Supportings/Constants.swift
+Constant.swift
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
@@ -133,6 +135,7 @@ Dependencies/
 ### Xcode ###
 # Xcode
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
 
 
 

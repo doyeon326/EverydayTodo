@@ -16,6 +16,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var progressView: ProgressView!
     @IBOutlet weak var percentage: UILabel!
     @IBOutlet weak var changeProfileButton: UIButton!
+    @IBOutlet weak var archiveButton: UIButton!
+    @IBOutlet weak var adButton: UIButton!
     func configure(){
         //do UISetups
     }

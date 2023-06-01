@@ -8,5 +8,8 @@ target 'EverydayTodo' do
   # Pods for EverydayTodo
 
 pod 'lottie-ios'
+pod 'Google-Mobile-Ads-SDK'
+
+
 
 end

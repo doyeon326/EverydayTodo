@@ -8,6 +8,8 @@
 import UIKit
 import CoreData
 import UserNotifications
+import GoogleMobileAds
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -16,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         requestAuthForLocalNotifications()
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
     

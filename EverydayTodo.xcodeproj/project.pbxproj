@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9416DF242A24A2D60035F711 /* ArchiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416DF232A24A2D60035F711 /* ArchiveTableViewCell.swift */; };
+		9416DF262A24F6E40035F711 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416DF252A24F6E40035F711 /* Constants.swift */; };
+		946DCDEC2A2487B70013FB7B /* ArchiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946DCDEB2A2487B70013FB7B /* ArchiveViewController.swift */; };
+		94E45EF02A2498340081E3DE /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E45EEC2A2498340081E3DE /* Profile+CoreDataProperties.swift */; };
+		94E45EF12A2498340081E3DE /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E45EED2A2498340081E3DE /* Todo+CoreDataClass.swift */; };
+		94E45EF22A2498340081E3DE /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E45EEE2A2498340081E3DE /* Todo+CoreDataProperties.swift */; };
+		94E45EF32A2498340081E3DE /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E45EEF2A2498340081E3DE /* Profile+CoreDataClass.swift */; };
+		94E45EF52A249D0A0081E3DE /* ArchiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94E45EF42A249D0A0081E3DE /* ArchiveViewModel.swift */; };
 		A80ED70A08A0E84DC023BC38 /* Pods_EverydayTodo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */; };
 		EA13F48D25AEAF190003AF92 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA13F48C25AEAF190003AF92 /* ProfileViewModel.swift */; };
 		EA35CE5E259A2E070009A51F /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA35CE5D259A2E070009A51F /* Todo.swift */; };
@@ -16,10 +24,6 @@
 		EA44F10A25B4074A008BC0D7 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA44F10925B4074A008BC0D7 /* Core.swift */; };
 		EA5171B625A72323008183FA /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5171B525A72323008183FA /* TodoViewModel.swift */; };
 		EA5A517225A9991900B8DF61 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A517125A9991900B8DF61 /* EditProfileViewController.swift */; };
-		EA5A518125AAB24700B8DF61 /* Profile+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A517D25AAB24700B8DF61 /* Profile+CoreDataClass.swift */; };
-		EA5A518225AAB24700B8DF61 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A517E25AAB24700B8DF61 /* Profile+CoreDataProperties.swift */; };
-		EA5A518325AAB24700B8DF61 /* Todo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A517F25AAB24700B8DF61 /* Todo+CoreDataClass.swift */; };
-		EA5A518425AAB24700B8DF61 /* Todo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A518025AAB24700B8DF61 /* Todo+CoreDataProperties.swift */; };
 		EA5A519025AAB3E800B8DF61 /* EverydayTodo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EACB124D258799BC00B80F59 /* EverydayTodo.xcdatamodeld */; };
 		EA5A519325AB0A0E00B8DF61 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA5A519225AB0A0E00B8DF61 /* Profile.swift */; };
 		EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA99FB77258D0D3500E0D30D /* ModalViewController.swift */; };
@@ -40,6 +44,15 @@
 /* Begin PBXFileReference section */
 		71DF0B6E09F56FC2F1BB9050 /* Pods_EverydayTodo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EverydayTodo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93F64EB69614C9989339FA45 /* Pods-EverydayTodo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EverydayTodo.debug.xcconfig"; path = "Target Support Files/Pods-EverydayTodo/Pods-EverydayTodo.debug.xcconfig"; sourceTree = "<group>"; };
+		9416DF232A24A2D60035F711 /* ArchiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveTableViewCell.swift; sourceTree = "<group>"; };
+		9416DF252A24F6E40035F711 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		946DCDEB2A2487B70013FB7B /* ArchiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewController.swift; sourceTree = "<group>"; };
+		946DCDED2A248EC20013FB7B /* EverydayTodo_Arichive.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EverydayTodo_Arichive.xcdatamodel; sourceTree = "<group>"; };
+		94E45EEC2A2498340081E3DE /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		94E45EED2A2498340081E3DE /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		94E45EEE2A2498340081E3DE /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		94E45EEF2A2498340081E3DE /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		94E45EF42A249D0A0081E3DE /* ArchiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveViewModel.swift; sourceTree = "<group>"; };
 		EA13F48C25AEAF190003AF92 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EA35CE5D259A2E070009A51F /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		EA35CE60259C50920009A51F /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
@@ -48,10 +61,6 @@
 		EA44F10925B4074A008BC0D7 /* Core.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		EA5171B525A72323008183FA /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
 		EA5A517125A9991900B8DF61 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		EA5A517D25AAB24700B8DF61 /* Profile+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		EA5A517E25AAB24700B8DF61 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
-		EA5A517F25AAB24700B8DF61 /* Todo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		EA5A518025AAB24700B8DF61 /* Todo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		EA5A519225AB0A0E00B8DF61 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		EA99FB77258D0D3500E0D30D /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		EAB6234E25BED4C5002457A5 /* TodoAddCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -145,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				EACB1255258799C100B80F59 /* Info.plist */,
+				9416DF252A24F6E40035F711 /* Constants.swift */,
 			);
 			path = Supportings;
 			sourceTree = "<group>";
@@ -181,10 +191,10 @@
 		EACB126025879FBE00B80F59 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EA5A517D25AAB24700B8DF61 /* Profile+CoreDataClass.swift */,
-				EA5A517E25AAB24700B8DF61 /* Profile+CoreDataProperties.swift */,
-				EA5A517F25AAB24700B8DF61 /* Todo+CoreDataClass.swift */,
-				EA5A518025AAB24700B8DF61 /* Todo+CoreDataProperties.swift */,
+				94E45EEF2A2498340081E3DE /* Profile+CoreDataClass.swift */,
+				94E45EEC2A2498340081E3DE /* Profile+CoreDataProperties.swift */,
+				94E45EED2A2498340081E3DE /* Todo+CoreDataClass.swift */,
+				94E45EEE2A2498340081E3DE /* Todo+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +205,7 @@
 				EA44F10925B4074A008BC0D7 /* Core.swift */,
 				EA5171B525A72323008183FA /* TodoViewModel.swift */,
 				EA13F48C25AEAF190003AF92 /* ProfileViewModel.swift */,
+				94E45EF42A249D0A0081E3DE /* ArchiveViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -225,6 +236,7 @@
 				EA99FB77258D0D3500E0D30D /* ModalViewController.swift */,
 				EA5A517125A9991900B8DF61 /* EditProfileViewController.swift */,
 				EA44F0FB25B3E413008BC0D7 /* WelcomeViewController.swift */,
+				946DCDEB2A2487B70013FB7B /* ArchiveViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 			children = (
 				EACB126D2587A82600B80F59 /* TodoCollectionViewCell.swift */,
 				EAB6234E25BED4C5002457A5 /* TodoAddCollectionViewCell.swift */,
+				9416DF232A24A2D60035F711 /* ArchiveTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -284,6 +297,8 @@
 			dependencies = (
 			);
 			name = EverydayTodo;
+			packageProductDependencies = (
+			);
 			productName = EverydayTodo;
 			productReference = EACB1241258799BC00B80F59 /* EverydayTodo.app */;
 			productType = "com.apple.product-type.application";
@@ -294,8 +309,9 @@
 		EACB1239258799BC00B80F59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1220;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					EACB1240258799BC00B80F59 = {
 						CreatedOnToolsVersion = 12.2;
@@ -311,6 +327,8 @@
 				Base,
 			);
 			mainGroup = EACB1238258799BC00B80F59;
+			packageReferences = (
+			);
 			productRefGroup = EACB1242258799BC00B80F59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,28 +400,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9416DF242A24A2D60035F711 /* ArchiveTableViewCell.swift in Sources */,
 				EA5A519025AAB3E800B8DF61 /* EverydayTodo.xcdatamodeld in Sources */,
 				EA5A517225A9991900B8DF61 /* EditProfileViewController.swift in Sources */,
-				EA5A518125AAB24700B8DF61 /* Profile+CoreDataClass.swift in Sources */,
+				94E45EF02A2498340081E3DE /* Profile+CoreDataProperties.swift in Sources */,
 				EA35CE61259C50920009A51F /* Date+Extensions.swift in Sources */,
 				EABC54AD258B64D90092DF9B /* HeaderCollectionReusableView.swift in Sources */,
 				EA5171B625A72323008183FA /* TodoViewModel.swift in Sources */,
+				9416DF262A24F6E40035F711 /* Constants.swift in Sources */,
+				94E45EF32A2498340081E3DE /* Profile+CoreDataClass.swift in Sources */,
 				EA44F0FC25B3E413008BC0D7 /* WelcomeViewController.swift in Sources */,
+				94E45EF22A2498340081E3DE /* Todo+CoreDataProperties.swift in Sources */,
 				EACB1249258799BC00B80F59 /* TodoViewController.swift in Sources */,
+				94E45EF12A2498340081E3DE /* Todo+CoreDataClass.swift in Sources */,
 				EACB1245258799BC00B80F59 /* AppDelegate.swift in Sources */,
 				EACB126E2587A82600B80F59 /* TodoCollectionViewCell.swift in Sources */,
 				EAB6234F25BED4C5002457A5 /* TodoAddCollectionViewCell.swift in Sources */,
 				EA99FB78258D0D3500E0D30D /* ModalViewController.swift in Sources */,
+				94E45EF52A249D0A0081E3DE /* ArchiveViewModel.swift in Sources */,
 				EABC54A4258B56BC0092DF9B /* ViewExtensions.swift in Sources */,
+				946DCDEC2A2487B70013FB7B /* ArchiveViewController.swift in Sources */,
 				EABC54AA258B5B070092DF9B /* LineView.swift in Sources */,
 				EA44F10A25B4074A008BC0D7 /* Core.swift in Sources */,
 				EA35CE5E259A2E070009A51F /* Todo.swift in Sources */,
 				EA13F48D25AEAF190003AF92 /* ProfileViewModel.swift in Sources */,
-				EA5A518225AAB24700B8DF61 /* Profile+CoreDataProperties.swift in Sources */,
 				EACB1247258799BC00B80F59 /* SceneDelegate.swift in Sources */,
 				EA5A519325AB0A0E00B8DF61 /* Profile.swift in Sources */,
-				EA5A518325AAB24700B8DF61 /* Todo+CoreDataClass.swift in Sources */,
-				EA5A518425AAB24700B8DF61 /* Todo+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +502,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -535,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -555,11 +577,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68663464K3;
 				INFOPLIST_FILE = EverydayTodo/Supportings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.2.2;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Lottie\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.doyeon.EverydayTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -577,11 +612,24 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 68663464K3;
 				INFOPLIST_FILE = EverydayTodo/Supportings/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.2.2;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"Lottie\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.doyeon.EverydayTodo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -616,9 +664,10 @@
 		EACB124D258799BC00B80F59 /* EverydayTodo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				946DCDED2A248EC20013FB7B /* EverydayTodo_Arichive.xcdatamodel */,
 				EACB124E258799BC00B80F59 /* EverydayTodo.xcdatamodel */,
 			);
-			currentVersion = EACB124E258799BC00B80F59 /* EverydayTodo.xcdatamodel */;
+			currentVersion = 946DCDED2A248EC20013FB7B /* EverydayTodo_Arichive.xcdatamodel */;
 			path = EverydayTodo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
