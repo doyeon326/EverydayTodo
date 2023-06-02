@@ -632,9 +632,10 @@
                                             <action selector="closeButtonTapped:" destination="8Yh-jo-oMw" eventType="touchUpInside" id="pra-JG-xdS"/>
                                         </connections>
                                     </button>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Eqd-TQ-Olc">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Eqd-TQ-Olc">
                                         <rect key="frame" x="5" y="52" width="384" height="366"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                        <color key="sectionIndexBackgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ArchiveTableViewCell" rowHeight="97" id="zjZ-Jd-BC3" customClass="ArchiveTableViewCell" customModule="EverydayTodo" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="384" height="97"/>
@@ -698,6 +699,7 @@
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default" weight="semibold"/>
                                                         </imageView>
                                                     </subviews>
+                                                    <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstItem="XgZ-g1-fCN" firstAttribute="leading" secondItem="KFl-dt-tni" secondAttribute="leadingMargin" constant="8.5" id="3n4-bc-ZTE"/>
                                                         <constraint firstItem="XgZ-g1-fCN" firstAttribute="top" secondItem="KFl-dt-tni" secondAttribute="top" constant="8.5" id="9bm-Fo-3rJ"/>
@@ -777,9 +779,6 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
